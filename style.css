@@ -516,6 +516,13 @@ a:hover {
 
 .offer-popular {
     border: 2px solid var(--primary-orange);
+    overflow: visible;
+    animation: cardGlow 3s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+    0%, 100% { box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(249, 115, 22, 0.15); }
+    50% { box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(249, 115, 22, 0.4), 0 0 60px rgba(249, 115, 22, 0.15); }
 }
 
 .offer-badge {
