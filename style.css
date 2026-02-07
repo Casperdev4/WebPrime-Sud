@@ -583,6 +583,14 @@ a:hover {
     color: var(--text-gray);
 }
 
+.old-price {
+    text-decoration: line-through;
+    font-size: 0.65em;
+    opacity: 0.6;
+    margin-right: 6px;
+    font-weight: 500;
+}
+
 .offer-description {
     font-size: 14px;
     color: var(--text-gray);
