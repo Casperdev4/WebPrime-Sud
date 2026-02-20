@@ -1,5 +1,5 @@
 /* ==========================================================
-   SCREAM EXPERIENCE - WebPrime
+   PROFESSOR EXPERIENCE - WebPrime
    script.js - Chat Professor + Reveal progressif
    ========================================================== */
 
@@ -9,7 +9,7 @@ const CONFIG = {
   afterTypingDelay: 400,
   correctDelay: 800,
   wrongDelay: 600,
-  victoryWait: 3000,
+  victoryWait: 8000,
   redirectDelay: 2000,
   revealSteps: [
     { opacity: 0.95, blur: 20 },  // départ
@@ -41,8 +41,8 @@ const introQuestions = [
     text: "Tu es dans quel secteur ?",
     answers: [
       { letter: "A", text: "Artisan / BTP" },
-      { letter: "B", text: "Commerce / Restaurant / Beauté" },
-      { letter: "C", text: "Autre secteur d'activité" }
+      { letter: "B", text: "Commerce / Restaurant / Beauté / Cabinet" },
+      { letter: "C", text: "E-Commerce" }
     ],
     reactions: [
       "Parfait, les artisans c'est notre spécialité.",
@@ -63,7 +63,8 @@ const questions = [
     ],
     correct: 1,
     goodReaction: "Exactement. Sans visibilité sur Google, ton site c'est une vitrine dans une ruelle que personne ne connaît.",
-    errorMsg: "FAUX ! Un site que personne ne trouve, c'est un site qui n'existe pas... DÉGAGE !"
+    errorMsg: "FAUX ! Un site que personne ne trouve, c'est un site qui n'existe pas... DÉGAGE !",
+    artisanOnly: true
   },
   {
     text: "Seulement 10% des sites peuvent être en première page Google, pour y être tu fais quoi ?",
@@ -107,7 +108,8 @@ const questions = [
     ],
     correct: 1,
     goodReaction: "Voilà la vérité. Pas de visibilité = pas de clients. C'est aussi simple que ça.",
-    errorMsg: "FAUX ! Le problème c'est jamais internet, c'est ceux qui ne savent pas l'utiliser... QUITTE CE SITE !"
+    errorMsg: "FAUX ! Le problème c'est jamais internet, c'est ceux qui ne savent pas l'utiliser... QUITTE CE SITE !",
+    artisanOnly: true
   },
   {
     text: "Ton site est en 1ère page Google mais tu estimes ne pas recevoir assez d'appels. Tu fais quoi ?",
@@ -119,6 +121,84 @@ const questions = [
     correct: 1,
     goodReaction: "Enfin quelqu'un qui réfléchit. Être premier sur Google c'est 50% du travail. Le reste, c'est TOI : tes offres, ton accueil téléphonique, tes avis clients.",
     errorMsg: "PATHÉTIQUE ! Tu es en 1ère page Google et tu te plains ?! Le problème c'est pas le site, c'est ce que TU en fais... DÉGAGE !"
+  },
+  {
+    text: "Pour ce genre de site internet, c'est quoi le nerf de la guerre ?",
+    answers: [
+      { letter: "A", text: "Avoir un beau compte Instagram" },
+      { letter: "B", text: "Une fiche Google optimisée reliée à un site web performant" },
+      { letter: "C", text: "Payer de la pub Facebook" }
+    ],
+    correct: 1,
+    goodReaction: "Exact. Ta fiche Google c'est ta vitrine digitale. Mais sans un vrai site derrière, Google te prend pas au sérieux.",
+    wrongExplanation: "Pas tout à fait. La bonne réponse c'est : une fiche Google optimisée reliée à un site performant. C'est ça qui te rend visible localement.",
+    commerceOnly: true,
+    forgiving: true
+  },
+  {
+    text: "Les robots de Google analysent ton site. Qu'est-ce qu'ils détectent immédiatement ?",
+    answers: [
+      { letter: "A", text: "Les couleurs de ton logo" },
+      { letter: "B", text: "Le nombre de photos" },
+      { letter: "C", text: "La performance, la vitesse et la qualité du code de ton site" }
+    ],
+    correct: 2,
+    goodReaction: "Les robots Google ne regardent pas si ton site est joli. Ils mesurent la vitesse, le code et la structure. Un site no-code, ils le repèrent direct.",
+    wrongExplanation: "Raté. Les robots Google analysent la performance, la vitesse et la qualité du code. Un site Wix ou Squarespace, ils le détectent comme du bas de gamme.",
+    commerceOnly: true,
+    forgiving: true
+  },
+  {
+    text: "WordPress avec du code PHP personnalisé vs un site Wix ou Squarespace, c'est quoi la différence ?",
+    answers: [
+      { letter: "A", text: "Aucune, c'est pareil" },
+      { letter: "B", text: "Juste le prix" },
+      { letter: "C", text: "Performance, SEO, et contrôle total sur le référencement Google" }
+    ],
+    correct: 2,
+    goodReaction: "Voilà. WordPress + PHP sur mesure = un site rapide, optimisé, que Google adore. Un site no-code, c'est du bricolage.",
+    wrongExplanation: "Non ! La vraie différence c'est la performance, le SEO et le contrôle total. WordPress + PHP sur mesure, c'est ce que Google préfère. Le no-code c'est du bricolage.",
+    commerceOnly: true,
+    forgiving: true
+  },
+  {
+    text: "Pour un site e-commerce, c'est quoi le plus important pour vendre en ligne ?",
+    answers: [
+      { letter: "A", text: "Un beau design avec beaucoup de couleurs" },
+      { letter: "B", text: "Un site rapide, sécurisé, bien référencé avec un paiement fiable" },
+      { letter: "C", text: "Avoir le plus de produits possible" }
+    ],
+    correct: 1,
+    goodReaction: "Exact. Un site e-commerce qui rame ou qui inspire pas confiance, le client ferme l'onglet en 3 secondes.",
+    wrongExplanation: "Pas tout à fait. La bonne réponse c'est : un site rapide, sécurisé, bien référencé avec un paiement fiable. C'est ça qui convertit les visiteurs en acheteurs.",
+    ecommerceOnly: true,
+    forgiving: true
+  },
+  {
+    text: "Un client hésite à payer en ligne sur ton site. Qu'est-ce qui le rassure ?",
+    answers: [
+      { letter: "A", text: "Des animations et des effets visuels" },
+      { letter: "B", text: "Un site fluide, des offres, de bons avis clients et plusieurs modes de paiement" },
+      { letter: "C", text: "Un chatbot qui lui dit bonjour" }
+    ],
+    correct: 1,
+    goodReaction: "Voilà. Un site fluide, des offres claires, des avis clients et plusieurs modes de paiement. C'est la base pour que les gens sortent leur carte bancaire.",
+    wrongExplanation: "Non. Ce qui rassure un acheteur c'est : un site fluide, des offres, de bons avis clients et plusieurs modes de paiement.",
+    ecommerceOnly: true,
+    forgiving: true
+  },
+  {
+    text: "WordPress + WooCommerce avec du code PHP personnalisé vs Shopify, c'est quoi la différence ?",
+    answers: [
+      { letter: "A", text: "Aucune, c'est pareil" },
+      { letter: "B", text: "Shopify c'est mieux car c'est plus simple" },
+      { letter: "C", text: "Performance, SEO, zéro commission sur les ventes et contrôle total" }
+    ],
+    correct: 2,
+    goodReaction: "Exactement. WordPress + WooCommerce = pas de commission, SEO total, performance sur mesure. Shopify te prend un % sur chaque vente et limite ton référencement.",
+    wrongExplanation: "Faux. La vraie différence : WordPress + WooCommerce te donne la performance, le SEO et zéro commission. Shopify prend un pourcentage sur chaque vente et limite ton contrôle.",
+    ecommerceOnly: true,
+    forgiving: true
   }
 ];
 
@@ -135,6 +215,34 @@ let currentQuestion = 0;
 let currentIntro = 0;
 let isAnswering = false;
 let introPhase = true;
+let selectedSector = null;
+let activeQuestions = [];
+
+function buildQuestions() {
+  if (selectedSector === 0) {
+    // Artisan / BTP : questions communes + artisan, sans commerce/ecommerce
+    activeQuestions = questions.filter(q => !q.commerceOnly && !q.ecommerceOnly);
+  } else if (selectedSector === 1) {
+    // Commerce/Restaurant/Beauté : uniquement les questions commerce
+    activeQuestions = questions.filter(q => q.commerceOnly);
+  } else if (selectedSector === 2) {
+    // E-Commerce : uniquement les questions e-commerce
+    activeQuestions = questions.filter(q => q.ecommerceOnly);
+  } else {
+    // Autre : questions communes uniquement
+    activeQuestions = questions.filter(q => !q.artisanOnly && !q.commerceOnly && !q.ecommerceOnly);
+  }
+  // Recalculer les étapes de reveal dynamiquement
+  const total = activeQuestions.length;
+  CONFIG.revealSteps = [{ opacity: 0.95, blur: 20 }];
+  for (let i = 1; i <= total; i++) {
+    const progress = i / total;
+    CONFIG.revealSteps.push({
+      opacity: Math.round((0.95 * (1 - progress)) * 100) / 100,
+      blur: Math.round(20 * (1 - progress))
+    });
+  }
+}
 
 // ==================== UTILITAIRES ====================
 function sleep(ms) {
@@ -232,12 +340,22 @@ async function handleIntroAnswer(ansIndex) {
   sendUserMessage(q.answers[ansIndex].text);
   chatAnswers.innerHTML = '';
 
-  // Redirection si nécessaire (ex: app mobile)
+  // Redirection si nécessaire (ex: app mobile, commerce)
   if (q.redirectIndex !== undefined && ansIndex === q.redirectIndex) {
-    await sendGhostMessage("Je t'envoie vers notre page application mobile. À tout de suite !");
+    const redirectMessages = {
+      "../creation-application-mobile.html": "Je t'envoie vers notre page application mobile. À tout de suite !",
+      "../creation-site-internet.html": "Je t'envoie vers notre page création de site internet. À tout de suite !"
+    };
+    const msg = redirectMessages[q.redirectUrl] || "Je te redirige. À tout de suite !";
+    await sendGhostMessage(msg);
     await sleep(1000);
     window.location.href = q.redirectUrl;
     return;
+  }
+
+  // Stocker le secteur si c'est la question secteur (index 1)
+  if (currentIntro === 1) {
+    selectedSector = ansIndex;
   }
 
   // Réaction du Professor
@@ -246,11 +364,12 @@ async function handleIntroAnswer(ansIndex) {
   currentIntro++;
 
   if (currentIntro >= introQuestions.length) {
-    // Fin de l'intro, lancement du quiz
+    // Fin de l'intro, construire les questions selon le secteur
     introPhase = false;
-    await sendGhostMessage("Bien, maintenant passons aux choses sérieuses. Réponds à mes 6 questions pour accéder au site.");
-    await sendGhostMessage(questions[0].text, 'question');
-    showAnswers(questions[0]);
+    buildQuestions();
+    await sendGhostMessage("Bien, maintenant passons aux choses sérieuses.");
+    await sendGhostMessage(activeQuestions[0].text, 'question');
+    showAnswers(activeQuestions[0]);
     isAnswering = false;
   } else {
     // Question intro suivante
@@ -280,7 +399,7 @@ async function handleAnswer(ansIndex) {
   if (isAnswering) return;
   isAnswering = true;
 
-  const q = questions[currentQuestion];
+  const q = activeQuestions[currentQuestion];
 
   // Afficher la réponse de l'utilisateur
   sendUserMessage(q.answers[ansIndex].text);
@@ -291,7 +410,7 @@ async function handleAnswer(ansIndex) {
     currentQuestion++;
 
     // Barre de progression
-    progressFill.style.width = (currentQuestion / questions.length) * 100 + '%';
+    progressFill.style.width = (currentQuestion / activeQuestions.length) * 100 + '%';
 
     // Reveal progressif
     updateReveal(currentQuestion);
@@ -299,12 +418,31 @@ async function handleAnswer(ansIndex) {
     // Réaction de Professor
     await sendGhostMessage(q.goodReaction, 'reaction-good');
 
-    if (currentQuestion >= questions.length) {
+    if (currentQuestion >= activeQuestions.length) {
+      await sleep(5000);
       showVictory();
     } else {
       // Question suivante
-      await sendGhostMessage(questions[currentQuestion].text, 'question');
-      showAnswers(questions[currentQuestion]);
+      await sendGhostMessage(activeQuestions[currentQuestion].text, 'question');
+      showAnswers(activeQuestions[currentQuestion]);
+      isAnswering = false;
+    }
+
+  } else if (q.forgiving || selectedSector === 1) {
+    // Mauvaise réponse indulgente (Commerce) : on explique et on continue
+    const explanation = q.wrongExplanation || q.errorMsg.replace(/\.\.\..*$/, '. La bonne réponse était : ' + q.answers[q.correct].text);
+    await sendGhostMessage(explanation, 'reaction-bad');
+
+    currentQuestion++;
+    progressFill.style.width = (currentQuestion / activeQuestions.length) * 100 + '%';
+    updateReveal(currentQuestion);
+
+    if (currentQuestion >= activeQuestions.length) {
+      await sleep(5000);
+      showVictory();
+    } else {
+      await sendGhostMessage(activeQuestions[currentQuestion].text, 'question');
+      showAnswers(activeQuestions[currentQuestion]);
       isAnswering = false;
     }
 
@@ -382,10 +520,19 @@ function showVictory() {
     victoryMessage.classList.add('hidden');
 
     // Marquer le quiz comme terminé
-    sessionStorage.setItem('screamDone', 'true');
+    sessionStorage.setItem('professorDone', 'true');
 
     setTimeout(() => {
-      window.location.href = '../index.html';
+      // Redirection selon le secteur
+      if (selectedSector === 0) {
+        window.location.href = '../pack-google.html';
+      } else if (selectedSector === 1) {
+        window.location.href = '../creation-site-internet.html';
+      } else if (selectedSector === 2) {
+        window.location.href = '../site-ecommerce.html';
+      } else {
+        window.location.href = '../index.html';
+      }
     }, CONFIG.redirectDelay);
   }, CONFIG.victoryWait);
 }
