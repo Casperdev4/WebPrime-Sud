@@ -1,9 +1,3 @@
-/* ==========================================================
-   PROFESSOR EXPERIENCE - WebPrime
-   script.js - Chat Professor + Reveal progressif
-   ========================================================== */
-
-// ==================== CONFIG ====================
 const CONFIG = {
   typingDelay: 1200,
   afterTypingDelay: 400,
@@ -12,17 +6,16 @@ const CONFIG = {
   victoryWait: 8000,
   redirectDelay: 2000,
   revealSteps: [
-    { opacity: 0.95, blur: 20 },  // départ
-    { opacity: 0.85, blur: 17 },  // Q1 réussie
-    { opacity: 0.72, blur: 14 },  // Q2 réussie
-    { opacity: 0.56, blur: 11 },  // Q3 réussie
-    { opacity: 0.40, blur: 8 },   // Q4 réussie
-    { opacity: 0.20, blur: 4 },   // Q5 réussie
-    { opacity: 0, blur: 0 },      // Q6 réussie = site révélé
+    { opacity: 0.95, blur: 20 },
+    { opacity: 0.85, blur: 17 },
+    { opacity: 0.72, blur: 14 },
+    { opacity: 0.56, blur: 11 },
+    { opacity: 0.40, blur: 8 },
+    { opacity: 0.20, blur: 4 },
+    { opacity: 0, blur: 0 },
   ],
 };
 
-// ==================== QUESTIONS INTRO (aiguillage) ====================
 const introQuestions = [
   {
     text: "Tu cherches quoi exactement ?",
@@ -32,13 +25,14 @@ const introQuestions = [
     ],
     reactions: [
       "Bien, tu es au bon endroit.",
-      null // redirect
+      null
     ],
     redirectIndex: 1,
     redirectUrl: "../creation-application-mobile.html"
   },
   {
     text: "Tu es dans quel secteur ?",
+
     answers: [
       { letter: "A", text: "Artisan / BTP" },
       { letter: "B", text: "Commerce / Restaurant / Beauté / Cabinet" },
@@ -52,7 +46,6 @@ const introQuestions = [
   }
 ];
 
-// ==================== QUESTIONS QUIZ ====================
 const questions = [
   {
     text: "Tu es artisan et tu veux des clients via internet. C'est quoi le PLUS important ?",
@@ -202,7 +195,6 @@ const questions = [
   }
 ];
 
-// ==================== DOM ELEMENTS ====================
 const chatMessages = document.getElementById('chat-messages');
 const chatAnswers = document.getElementById('chat-answers');
 const siteOverlay = document.getElementById('site-overlay');
@@ -210,7 +202,6 @@ const progressFill = document.getElementById('progress-fill');
 const victoryMessage = document.getElementById('victory-message');
 const chatZone = document.getElementById('chat-zone');
 
-// ==================== GAME STATE ====================
 let currentQuestion = 0;
 let currentIntro = 0;
 let isAnswering = false;
@@ -220,19 +211,14 @@ let activeQuestions = [];
 
 function buildQuestions() {
   if (selectedSector === 0) {
-    // Artisan / BTP : questions communes + artisan, sans commerce/ecommerce
     activeQuestions = questions.filter(q => !q.commerceOnly && !q.ecommerceOnly);
   } else if (selectedSector === 1) {
-    // Commerce/Restaurant/Beauté : uniquement les questions commerce
     activeQuestions = questions.filter(q => q.commerceOnly);
   } else if (selectedSector === 2) {
-    // E-Commerce : uniquement les questions e-commerce
     activeQuestions = questions.filter(q => q.ecommerceOnly);
   } else {
-    // Autre : questions communes uniquement
     activeQuestions = questions.filter(q => !q.artisanOnly && !q.commerceOnly && !q.ecommerceOnly);
   }
-  // Recalculer les étapes de reveal dynamiquement
   const total = activeQuestions.length;
   CONFIG.revealSteps = [{ opacity: 0.95, blur: 20 }];
   for (let i = 1; i <= total; i++) {
@@ -244,7 +230,6 @@ function buildQuestions() {
   }
 }
 
-// ==================== UTILITAIRES ====================
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
@@ -253,7 +238,6 @@ function scrollToBottom() {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// ==================== CRÉER UNE BULLE GHOSTFACE ====================
 function createGhostBubble(text, extraClass = '') {
   const bubble = document.createElement('div');
   bubble.className = `chat-bubble bubble-ghost ${extraClass}`.trim();
@@ -267,7 +251,6 @@ function createGhostBubble(text, extraClass = '') {
   return bubble;
 }
 
-// ==================== TYPING INDICATOR ====================
 function showTyping() {
   const typing = document.createElement('div');
   typing.className = 'typing-indicator';
@@ -286,7 +269,6 @@ function hideTyping() {
   if (typing) typing.remove();
 }
 
-// ==================== ENVOYER UN MESSAGE GHOSTFACE ====================
 async function sendGhostMessage(text, extraClass = '') {
   showTyping();
   await sleep(CONFIG.typingDelay);
@@ -298,7 +280,6 @@ async function sendGhostMessage(text, extraClass = '') {
   await sleep(CONFIG.afterTypingDelay);
 }
 
-// ==================== ENVOYER UN MESSAGE UTILISATEUR ====================
 function sendUserMessage(text) {
   const bubble = document.createElement('div');
   bubble.className = 'chat-bubble bubble-user';
@@ -307,14 +288,12 @@ function sendUserMessage(text) {
   scrollToBottom();
 }
 
-// ==================== REVEAL DU SITE ====================
 function updateReveal(step) {
   const r = CONFIG.revealSteps[step];
   siteOverlay.style.background = `rgba(0, 0, 0, ${r.opacity})`;
   siteOverlay.style.backdropFilter = `blur(${r.blur}px)`;
 }
 
-// ==================== AFFICHER LES RÉPONSES (intro) ====================
 function showIntroAnswers(q) {
   chatAnswers.innerHTML = '';
   q.answers.forEach((answer, index) => {
@@ -329,18 +308,15 @@ function showIntroAnswers(q) {
   });
 }
 
-// ==================== GESTION RÉPONSES INTRO ====================
 async function handleIntroAnswer(ansIndex) {
   if (isAnswering) return;
   isAnswering = true;
 
   const q = introQuestions[currentIntro];
 
-  // Afficher la réponse de l'utilisateur
   sendUserMessage(q.answers[ansIndex].text);
   chatAnswers.innerHTML = '';
 
-  // Redirection si nécessaire (ex: app mobile, commerce)
   if (q.redirectIndex !== undefined && ansIndex === q.redirectIndex) {
     const redirectMessages = {
       "../creation-application-mobile.html": "Je t'envoie vers notre page application mobile. À tout de suite !",
@@ -353,18 +329,15 @@ async function handleIntroAnswer(ansIndex) {
     return;
   }
 
-  // Stocker le secteur si c'est la question secteur (index 1)
   if (currentIntro === 1) {
     selectedSector = ansIndex;
   }
 
-  // Réaction du Professor
   await sendGhostMessage(q.reactions[ansIndex], 'reaction-good');
 
   currentIntro++;
 
   if (currentIntro >= introQuestions.length) {
-    // Fin de l'intro, construire les questions selon le secteur
     introPhase = false;
     buildQuestions();
     await sendGhostMessage("Bien, maintenant passons aux choses sérieuses.");
@@ -372,14 +345,12 @@ async function handleIntroAnswer(ansIndex) {
     showAnswers(activeQuestions[0]);
     isAnswering = false;
   } else {
-    // Question intro suivante
     await sendGhostMessage(introQuestions[currentIntro].text, 'question');
     showIntroAnswers(introQuestions[currentIntro]);
     isAnswering = false;
   }
 }
 
-// ==================== AFFICHER LES RÉPONSES (quiz) ====================
 function showAnswers(q) {
   chatAnswers.innerHTML = '';
   q.answers.forEach((answer, index) => {
@@ -394,42 +365,31 @@ function showAnswers(q) {
   });
 }
 
-// ==================== GESTION DES RÉPONSES (quiz) ====================
 async function handleAnswer(ansIndex) {
   if (isAnswering) return;
   isAnswering = true;
 
   const q = activeQuestions[currentQuestion];
 
-  // Afficher la réponse de l'utilisateur
   sendUserMessage(q.answers[ansIndex].text);
   chatAnswers.innerHTML = '';
 
   if (ansIndex === q.correct) {
-    // Bonne réponse
     currentQuestion++;
-
-    // Barre de progression
     progressFill.style.width = (currentQuestion / activeQuestions.length) * 100 + '%';
-
-    // Reveal progressif
     updateReveal(currentQuestion);
-
-    // Réaction de Professor
     await sendGhostMessage(q.goodReaction, 'reaction-good');
 
     if (currentQuestion >= activeQuestions.length) {
       await sleep(5000);
       showVictory();
     } else {
-      // Question suivante
       await sendGhostMessage(activeQuestions[currentQuestion].text, 'question');
       showAnswers(activeQuestions[currentQuestion]);
       isAnswering = false;
     }
 
   } else if (q.forgiving || selectedSector === 1) {
-    // Mauvaise réponse indulgente (Commerce) : on explique et on continue
     const explanation = q.wrongExplanation || q.errorMsg.replace(/\.\.\..*$/, '. La bonne réponse était : ' + q.answers[q.correct].text);
     await sendGhostMessage(explanation, 'reaction-bad');
 
@@ -447,7 +407,6 @@ async function handleAnswer(ansIndex) {
     }
 
   } else {
-    // Mauvaise réponse - effets
     triggerErrorEffects();
 
     await sendGhostMessage(q.errorMsg, 'reaction-bad');
@@ -456,7 +415,6 @@ async function handleAnswer(ansIndex) {
   }
 }
 
-// ==================== EFFETS MAUVAISE RÉPONSE ====================
 function triggerErrorEffects() {
   document.body.classList.add('screen-shake');
   setTimeout(() => document.body.classList.remove('screen-shake'), 600);
@@ -468,7 +426,6 @@ function triggerErrorEffects() {
   setTimeout(() => document.body.classList.remove('glitch-effect'), 1500);
 }
 
-// ==================== POP-UP FLOOD (mauvaise réponse) ====================
 function spawnErrorPopups(errorText) {
   const container = document.createElement('div');
   container.id = 'popup-flood';
@@ -495,7 +452,6 @@ function spawnErrorPopups(errorText) {
   }
 }
 
-// ==================== BOUTON QUITTER (mauvaise réponse) ====================
 function showExitButton() {
   chatAnswers.innerHTML = '';
   const btn = document.createElement('button');
@@ -507,45 +463,22 @@ function showExitButton() {
   chatAnswers.appendChild(btn);
 }
 
-// ==================== VICTOIRE ====================
 function showVictory() {
   chatZone.classList.add('fade-out');
-  victoryMessage.classList.remove('hidden');
-
-  // Particules disparaissent
   document.getElementById('particles').style.transition = 'opacity 1.5s ease';
   document.getElementById('particles').style.opacity = '0';
-
+  sessionStorage.setItem('professorDone', 'true');
   setTimeout(() => {
-    victoryMessage.classList.add('hidden');
-
-    // Marquer le quiz comme terminé
-    sessionStorage.setItem('professorDone', 'true');
-
-    setTimeout(() => {
-      // Redirection selon le secteur
-      if (selectedSector === 0) {
-        window.location.href = '../pack-google.html';
-      } else if (selectedSector === 1) {
-        window.location.href = '../creation-site-internet.html';
-      } else if (selectedSector === 2) {
-        window.location.href = '../site-ecommerce.html';
-      } else {
-        window.location.href = '../index.html';
-      }
-    }, CONFIG.redirectDelay);
-  }, CONFIG.victoryWait);
+    if (selectedSector === 0) window.location.href = '../pack-google.html';
+    else if (selectedSector === 1) window.location.href = '../creation-site-internet.html';
+    else if (selectedSector === 2) window.location.href = '../site-ecommerce.html';
+    else window.location.href = '../index.html';
+  }, 1500);
 }
 
-// ==================== LANCEMENT ====================
 document.addEventListener('DOMContentLoaded', async () => {
-  // Overlay initial
   updateReveal(0);
-
-  // Professor commence la conversation
   await sendGhostMessage("Bienvenue... attends 2 secondes.");
   await sendGhostMessage(introQuestions[0].text, 'question');
-
-  // Afficher les réponses de la première question intro
   showIntroAnswers(introQuestions[0]);
 });

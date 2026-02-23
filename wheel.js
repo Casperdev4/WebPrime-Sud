@@ -1,8 +1,3 @@
-/* ==========================================================
-   ROUE DE LA FORTUNE - WebPrime
-   wheel.js - Code partagé sur toutes les pages
-   ========================================================== */
-
 document.addEventListener('DOMContentLoaded', function () {
     const wheelTrigger = document.getElementById('wheelTrigger');
     const wheelModal = document.getElementById('wheelModal');
@@ -32,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const weights = {
-        '-10\u20AC/mois': 35,
-        '-20\u20AC/mois': 35,
-        '-50\u20AC/mois': 15,
-        'GROS LOT': 15
+        '-10\u20AC/mois': 7,
+        '-20\u20AC/mois': 7,
+        '-50\u20AC/mois': 6,
+        'GROS LOT': 80
     };
 
     function getWeightedPrize() {
@@ -148,9 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 requestAnimationFrame(animate);
             } else {
                 isSpinning = false;
-                let normalizedRotation = currentRotation % (2 * Math.PI);
-                const winningIndex = Math.floor((segments.length - normalizedRotation / segmentAngle) + segments.length) % segments.length;
-                currentPrize = segments[winningIndex].text;
+                currentPrize = selectedPrize;
                 setTimeout(showPrizeForm, 1000);
             }
         }
@@ -160,15 +153,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showPrizeForm() {
         wheelContainer.style.display = 'none';
-        wheelForm.style.display = 'block';
         const priceInput = document.getElementById('prizePrice');
 
+        wheelForm.style.display = 'block';
+
         if (currentPrize === 'GROS LOT') {
-            prizeText.innerHTML = 'Site internet offert !<span class="prize-note">Pour le suivi mensuel, choisissez votre prix !</span>';
-            priceInput.style.display = 'block';
-            priceInput.required = true;
-            priceInput.placeholder = 'Votre prix mensuel';
-        } else {
+            prizeForm.style.display = 'none';
+            var formText = wheelForm.querySelector('.wheel-form-text');
+            if (formText) formText.style.display = 'none';
+
+            prizeText.innerHTML = 'Pack 1\u00E8re page Google'
+                + '<span class="prize-note">35\u20AC/mois au lieu de <s>156\u20AC/mois</s> \u2022 Sans engagement</span>';
+
+            var offerList = document.createElement('div');
+            offerList.style.cssText = 'text-align:left;margin:15px 0;font-size:0.85rem;line-height:1.8;color:#d1d5db;';
+            offerList.innerHTML = ''
+                + '<p style="font-weight:700;color:#fff;margin-bottom:8px;font-size:0.9rem;">Ce qui est inclus :</p>'
+                + '<span style="color:#ffb156;">\u2714</span> Cr\u00E9ation site internet 100% cod\u00E9<br>'
+                + '<span style="color:#ffb156;">\u2714</span> Pages illimit\u00E9es<br>'
+                + '<span style="color:#ffb156;">\u2714</span> Nom de domaine + H\u00E9bergement<br>'
+                + '<span style="color:#ffb156;">\u2714</span> R\u00E9f\u00E9rencement naturel SEO (1\u00E8re page Google)<br>'
+                + '<span style="color:#ffb156;">\u2714</span> R\u00E9f\u00E9rencement page Google My Business<br>'
+                + '<span style="color:#ffb156;">\u2714</span> Modifications illimit\u00E9es<br>'
+                + '<span style="color:#ffb156;">\u2714</span> Formulaire de contact<br>'
+                + '<span style="color:#ffb156;">\u2714</span> Service clients 24h/24';
+            wheelForm.appendChild(offerList);
+
+            var callMsg = document.createElement('p');
+            callMsg.style.cssText = 'color:#4ade80;font-weight:700;font-size:0.85rem;margin:10px 0;';
+            callMsg.textContent = '\uD83D\uDCDE Nous vous appelons dans l\u2019heure qui suit votre paiement.';
+            wheelForm.appendChild(callMsg);
+
+            var stripeBtn = document.createElement('a');
+            stripeBtn.href = 'https://buy.stripe.com/4gM5kEbia2Qm58FfDDgYU0b';
+            stripeBtn.target = '_blank';
+            stripeBtn.className = 'wheel-submit-btn';
+            stripeBtn.textContent = 'Souscrire maintenant';
+            stripeBtn.style.cssText = 'display:block;text-align:center;text-decoration:none;';
+            wheelForm.appendChild(stripeBtn);
+
+            var note = document.createElement('p');
+            note.style.cssText = 'font-size:0.8rem;color:#9ca3af;margin-top:10px;text-align:center;';
+            note.textContent = '\u26A0\uFE0F En quittant cette page, l\'offre ne sera plus disponible.';
+            wheelForm.appendChild(note);
+
+            localStorage.setItem('wheelPlayed', 'true');
+            return;
+        }
+
+        {
             let newPrice = '';
             if (currentPrize === '-10\u20AC/mois') newPrice = '25\u20AC/mois';
             else if (currentPrize === '-20\u20AC/mois') newPrice = '15\u20AC/mois';
@@ -181,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Afficher le bouton après 2 secondes
     wheelTrigger.style.display = 'none';
     setTimeout(function () {
         if (!localStorage.getItem('wheelPlayed')) {
