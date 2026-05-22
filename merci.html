@@ -367,11 +367,7 @@
                             '</ul>' +
                             '</div>';
 
-                        if (formule.stripe) {
-                            html += '<a href="' + formule.stripe + '" target="_blank" class="btn-pay">Procéder au paiement →</a>';
-                        } else {
-                            html += '<div class="quote-note" style="color:#fbbf24; background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.25); border-radius:12px; padding:14px;">Cette formule nécessite la configuration du paiement en ligne. <strong>Notre équipe vous contactera dans l\'heure</strong> avec le lien de paiement personnalisé.</div>';
-                        }
+                        html += '<a href="mailto:contact@webprime.fr" class="btn-pay">📧 Nous contacter</a>';
                         html += '<a href="' + formule.detail + '" class="btn-secondary">Voir le détail du pack</a>';
                         html += '<p class="quote-note">📞 Nous vous appelons dans l\'heure pour confirmer votre projet et démarrer la création.</p>';
 
