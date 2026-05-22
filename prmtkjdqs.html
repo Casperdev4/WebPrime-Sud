@@ -228,6 +228,12 @@
         .pack-section { display: none; }
         .pack-section.visible { display: block; animation: fadeSlideUp 0.3s ease; }
 
+        .sector-section { display: none; }
+        .sector-section.visible { display: block; animation: fadeSlideUp 0.3s ease; }
+
+        .booking-variant { display: none; }
+        .booking-variant.visible { display: block; animation: fadeSlideUp 0.3s ease; }
+
         .form-buttons { display: flex; justify-content: space-between; gap: 16px; margin-top: 32px; }
         .btn-prev, .btn-next, .btn-submit {
             padding: 14px 32px;
@@ -358,6 +364,11 @@
                     <div class="stepper-circle">5</div>
                     <div class="stepper-label">Contenu</div>
                 </div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-step="6">
+                    <div class="stepper-circle">6</div>
+                    <div class="stepper-label">Spécificités</div>
+                </div>
             </div>
 
             <div class="form-card">
@@ -404,9 +415,14 @@
                                     <span class="option-text">Site Vitrine</span>
                                 </label>
                                 <label class="radio-option">
-                                    <input type="radio" name="pack_choisi" value="Site Booking">
+                                    <input type="radio" name="pack_choisi" value="Site Booking (sans paiement)">
                                     <span class="custom-radio"></span>
-                                    <span class="option-text">Site Booking (Réservation)</span>
+                                    <span class="option-text">Site Booking sans paiement (490€)</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="pack_choisi" value="Site Booking (avec paiement)">
+                                    <span class="custom-radio"></span>
+                                    <span class="option-text">Site Booking avec paiement (590€)</span>
                                 </label>
                                 <label class="radio-option">
                                     <input type="radio" name="pack_choisi" value="Site E-Commerce">
@@ -415,6 +431,26 @@
                                 </label>
                             </div>
                             <div class="error-msg">Veuillez sélectionner votre pack</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="secteur">Secteur d'activité <span class="required">*</span></label>
+                            <select id="secteur" name="secteur" required>
+                                <option value="" disabled selected>--- Sélectionner un choix ---</option>
+                                <option value="Artisan / Bâtiment">Artisan / Bâtiment</option>
+                                <option value="Restauration">Restauration</option>
+                                <option value="E-Commerce">E-Commerce</option>
+                                <option value="Beauté / Coiffure">Beauté / Coiffure</option>
+                                <option value="Santé / Bien-être">Santé / Bien-être</option>
+                                <option value="Auto / Garage">Auto / Garage</option>
+                                <option value="Immobilier / Agence">Immobilier / Agence</option>
+                                <option value="Cabinet / Agence">Cabinet / Agence</option>
+                                <option value="Coach / Formation">Coach / Formation</option>
+                                <option value="Avocat / Conseil">Avocat / Conseil</option>
+                                <option value="Événementiel">Événementiel</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                            <div class="error-msg">Veuillez sélectionner un secteur</div>
                         </div>
 
                         <div class="form-buttons">
@@ -431,12 +467,6 @@
                             <label for="siret">SIRET <span class="required">*</span></label>
                             <input type="text" id="siret" name="siret" placeholder="14 chiffres" pattern="[0-9 ]{14,17}" required>
                             <div class="error-msg">SIRET invalide (14 chiffres)</div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="activite">Activité principale <span class="required">*</span></label>
-                            <input type="text" id="activite" name="activite" placeholder="Ex : Plomberie, Coiffure, Restaurant italien..." required>
-                            <div class="error-msg">Ce champ est requis</div>
                         </div>
 
                         <div class="form-group">
@@ -516,10 +546,12 @@
                             <div class="error-msg">Ce champ est requis</div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="zone">Zone d'intervention (département / villes) <span class="required">*</span></label>
-                            <input type="text" id="zone" name="zone" placeholder="Ex : 91 Essonne — Évry, Corbeil-Essonnes, Massy" required>
-                            <div class="error-msg">Ce champ est requis</div>
+                        <div class="sector-section" id="zone-wrap">
+                            <div class="form-group">
+                                <label for="zone">Zone d'intervention (département / villes) <span class="required">*</span></label>
+                                <input type="text" id="zone" name="zone" placeholder="Ex : 91 Essonne — Évry, Corbeil-Essonnes, Massy">
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
                         </div>
 
                         <div class="form-buttons">
@@ -609,10 +641,33 @@
                         </div>
                     </div>
 
-                    <!-- ── PAGE 5 : Contenu ── -->
+                    <!-- ── PAGE 5 : Contenu de votre activité ── -->
                     <div class="form-page" data-page="5">
-                        <h2 class="form-page-title">Contenu de votre site</h2>
-                        <p class="form-page-subtitle">Les services / produits à présenter</p>
+                        <h2 class="form-page-title">Contenu de votre activité</h2>
+                        <p class="form-page-subtitle">Le matériel dont nous avons besoin pour rédiger votre site</p>
+
+                        <div class="info-box" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.4); border-radius: 12px; padding: 16px; margin-bottom: 24px;">
+                            <p style="color: #4ade80; font-size: 14px; margin: 0;">📸 <strong>Photos & vidéos :</strong> nous vous contacterons par WhatsApp pour la transmission de toutes les photos (lieu, équipe, plats, réalisations, etc.). Pas besoin de les fournir ici.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="a_propos">"À propos" — présentation de votre entreprise <span class="required">*</span></label>
+                            <textarea id="a_propos" name="a_propos" placeholder="Quelques phrases pour présenter votre entreprise, son histoire, son ADN..." rows="5" required></textarea>
+                            <div class="error-msg">Ce champ est requis</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="temoignages">Témoignages clients existants (3 à 5)</label>
+                            <textarea id="temoignages" name="temoignages" placeholder="Ex :&#10;1. Nom — Métier — &quot;Avis...&quot;&#10;2. ..." rows="5"></textarea>
+                            <p class="form-helper">Si vous avez des avis Google déjà existants, copiez-les directement ici.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mots_cles_google">Mots-clés Google ciblés (3 à 5) <span class="required">*</span></label>
+                            <input type="text" id="mots_cles_google" name="mots_cles_google" placeholder="Ex : Plombier Évry, dépannage chauffage 91, ..." required>
+                            <p class="form-helper">Les recherches Google pour lesquelles vous voulez apparaître en 1ère page.</p>
+                            <div class="error-msg">Ce champ est requis</div>
+                        </div>
 
                         <div class="form-group">
                             <label for="services">Liste des services / prestations <span class="required">*</span></label>
@@ -621,21 +676,158 @@
                             <div class="error-msg">Ce champ est requis</div>
                         </div>
 
+                        <!-- ── Sections conditionnelles selon le secteur ── -->
+
+                        <div class="sector-section" id="sec-restauration">
+                            <h3 class="form-section-title">Restauration</h3>
+                            <div class="form-group">
+                                <label for="resto_carte">Carte / menu (texte ou lien PDF) <span class="required">*</span></label>
+                                <textarea id="resto_carte" name="resto_carte" placeholder="Coller la carte ici, OU lien vers le PDF du menu." rows="5"></textarea>
+                                <div class="error-msg">Carte requise</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="resto_specialites">Type de cuisine + spécialités <span class="required">*</span></label>
+                                <input type="text" id="resto_specialites" name="resto_specialites" placeholder="Ex : Cuisine italienne — Pizzas au feu de bois, pâtes fraîches">
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                        </div>
+
+                        <div class="sector-section" id="sec-beaute-sante">
+                            <h3 class="form-section-title">Beauté / Coiffure / Santé</h3>
+                            <div class="form-group">
+                                <label for="bs_bios">Bio des praticiens (nom, spécialité) <span class="required">*</span></label>
+                                <textarea id="bs_bios" name="bs_bios" placeholder="Ex :&#10;1. Marie Dupont — Coloriste — 10 ans d'expérience&#10;2. ..." rows="5"></textarea>
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bs_produits_vendus">Catalogue de produits vendus (si applicable)</label>
+                                <textarea id="bs_produits_vendus" name="bs_produits_vendus" placeholder="Liste des produits proposés : marque, type, prix" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="sector-section" id="sec-artisan">
+                            <h3 class="form-section-title">Artisan / Bâtiment</h3>
+                            <div class="form-group">
+                                <label for="artisan_certifications">Certifications / labels</label>
+                                <input type="text" id="artisan_certifications" name="artisan_certifications" placeholder="Ex : RGE, Qualibat, Qualifelec, Eco-artisan, etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="artisan_departement">Département(s) d'intervention <span class="required">*</span></label>
+                                <input type="text" id="artisan_departement" name="artisan_departement" placeholder="Ex : 91 Essonne, 77 Seine-et-Marne">
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="artisan_villes">Villes d'intervention <span class="required">*</span></label>
+                                <input type="text" id="artisan_villes" name="artisan_villes" placeholder="Ex : Évry, Corbeil-Essonnes, Massy, Palaiseau...">
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                        </div>
+
+                        <div class="sector-section" id="sec-auto">
+                            <h3 class="form-section-title">Auto / Garage</h3>
+                            <div class="form-group">
+                                <label for="auto_marques">Marques traitées <span class="required">*</span></label>
+                                <input type="text" id="auto_marques" name="auto_marques" placeholder="Ex : Peugeot, Renault, BMW, multi-marques...">
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                        </div>
+
+                        <div class="sector-section" id="sec-immobilier">
+                            <h3 class="form-section-title">Immobilier / Agence</h3>
+                            <div class="form-group">
+                                <label for="immo_partenaires_noms">Partenaires (notaires, mandataires...)</label>
+                                <textarea id="immo_partenaires_noms" name="immo_partenaires_noms" placeholder="Ex :&#10;Étude notariale Dupont&#10;Mandataire Martin..." rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="immo_equipe_noms">Liste des agents (nom, fonction) <span class="required">*</span></label>
+                                <textarea id="immo_equipe_noms" name="immo_equipe_noms" placeholder="Ex :&#10;1. Jean Martin — Directeur d'agence&#10;2. Sophie Dupont — Commercial vente&#10;..." rows="4"></textarea>
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                        </div>
+
+                        <div class="sector-section" id="sec-cabinet">
+                            <h3 class="form-section-title">Cabinet / Agence</h3>
+                            <div class="form-group">
+                                <label for="cab_bios_equipe">Bios équipe (nom, fonction) <span class="required">*</span></label>
+                                <textarea id="cab_bios_equipe" name="cab_bios_equipe" placeholder="Ex :&#10;1. Jean Martin — Directeur — 15 ans d'expertise&#10;2. ..." rows="5"></textarea>
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cab_etudes_cas">Études de cas / réalisations</label>
+                                <textarea id="cab_etudes_cas" name="cab_etudes_cas" placeholder="Décrivez 2-3 missions emblématiques : client, problème, solution, résultat" rows="5"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="sector-section" id="sec-coach">
+                            <h3 class="form-section-title">Coach / Formation</h3>
+                            <div class="form-group">
+                                <label for="coach_bio">Bio du coach <span class="required">*</span></label>
+                                <textarea id="coach_bio" name="coach_bio" placeholder="Présentation, parcours, certifications" rows="5"></textarea>
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="coach_formations_detail">Catalogue de formations / programmes <span class="required">*</span></label>
+                                <textarea id="coach_formations_detail" name="coach_formations_detail" placeholder="Ex :&#10;1. Programme — Durée — Tarif — Public visé&#10;2. ..." rows="5"></textarea>
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="coach_temoignages_eleves">Témoignages élèves (3 à 5)</label>
+                                <textarea id="coach_temoignages_eleves" name="coach_temoignages_eleves" placeholder="Avant/Après avec témoignage" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="sector-section" id="sec-avocat">
+                            <h3 class="form-section-title">Avocat / Conseil</h3>
+                            <div class="form-group">
+                                <label for="avocat_bios_equipe">Bios équipe (nom, barreau, spécialité) <span class="required">*</span></label>
+                                <textarea id="avocat_bios_equipe" name="avocat_bios_equipe" placeholder="Ex :&#10;1. Maître Dupont — Barreau de Paris — Droit du travail&#10;2. ..." rows="5"></textarea>
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="avocat_specialites_detail">Spécialités détaillées <span class="required">*</span></label>
+                                <textarea id="avocat_specialites_detail" name="avocat_specialites_detail" placeholder="Listez vos domaines d'expertise et les types de dossiers traités" rows="4"></textarea>
+                                <div class="error-msg">Ce champ est requis</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="avocat_affaires">Affaires emblématiques (sans confidentialité)</label>
+                                <textarea id="avocat_affaires" name="avocat_affaires" placeholder="Cas anonymisés notables" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="sector-section" id="sec-evenementiel">
+                            <h3 class="form-section-title">Événementiel</h3>
+                            <div class="form-group">
+                                <label for="event_agenda_avenir">Agenda événements à venir</label>
+                                <textarea id="event_agenda_avenir" name="event_agenda_avenir" placeholder="Ex :&#10;15/06 — Mariage Pierre &amp; Marie&#10;22/06 — Soirée corporate XYZ" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" class="btn-prev" onclick="prevPage(5)">Précédent</button>
+                            <button type="button" class="btn-next" onclick="nextPage(5)">Suivant</button>
+                        </div>
+                    </div>
+
+                    <!-- ── PAGE 6 : Spécificités du pack ── -->
+                    <div class="form-page" data-page="6">
+                        <h2 class="form-page-title">Spécificités de votre pack</h2>
+                        <p class="form-page-subtitle">Les éléments propres à votre formule</p>
+
                         <!-- ── Section conditionnelle E-Commerce ── -->
                         <div class="pack-section" id="section-ecommerce">
                             <h3 class="form-section-title">E-Commerce — Produits & vente</h3>
 
                             <div class="form-group">
                                 <label for="catalogue">Catalogue produits <span class="required">*</span></label>
-                                <textarea id="catalogue" name="catalogue" placeholder="Liste manuelle :&#10;1. Nom du produit — Description — Prix — Stock&#10;2. ...&#10;&#10;Ou lien vers un fichier Excel/CSV partagé." rows="6"></textarea>
+                                <textarea id="catalogue" name="catalogue" placeholder="Liste manuelle :&#10;1. Nom — Description — Prix — Stock initial&#10;2. ...&#10;&#10;Ou lien vers un fichier Excel/CSV partagé." rows="7"></textarea>
+                                <p class="form-helper">Pour chaque produit : nom, description courte, prix, <strong>stock initial disponible</strong>.</p>
                                 <div class="error-msg">Catalogue requis pour l'E-Commerce</div>
                             </div>
 
                             <div class="form-group">
-                                <label for="photos_produits">Photos produits (lien Drive/Dropbox) <span class="required">*</span></label>
-                                <input type="text" id="photos_produits" name="photos_produits" placeholder="https://drive.google.com/...">
-                                <p class="form-helper">1 photo minimum par produit. Format JPG/PNG haute résolution.</p>
-                                <div class="error-msg">Lien des photos produits requis</div>
+                                <label for="variantes">Variantes produits (taille, couleur, modèle...)</label>
+                                <textarea id="variantes" name="variantes" placeholder="Ex :&#10;T-shirts : tailles XS, S, M, L, XL — couleurs noir, blanc, gris&#10;Chaussures : pointures 36 à 45&#10;..." rows="4"></textarea>
+                                <p class="form-helper">Laissez vide si aucun produit n'a de variante.</p>
                             </div>
 
                             <div class="form-group">
@@ -683,39 +875,113 @@
                             </div>
                         </div>
 
-                        <!-- ── Section conditionnelle Booking ── -->
+                        <!-- ── Section conditionnelle Booking (sous-variantes selon secteur) ── -->
                         <div class="pack-section" id="section-booking">
                             <h3 class="form-section-title">Booking — Réservations</h3>
 
-                            <div class="form-group">
-                                <label for="prestations_resa">Prestations réservables <span class="required">*</span></label>
-                                <textarea id="prestations_resa" name="prestations_resa" placeholder="Ex :&#10;1. Coupe homme — 30 min — 25€&#10;2. Coupe + couleur — 1h30 — 60€&#10;3. ..." rows="5"></textarea>
-                                <p class="form-helper">Format suggéré : Nom — Durée — Tarif</p>
-                                <div class="error-msg">Liste des prestations requise</div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Capacité simultanée <span class="required">*</span></label>
-                                <div class="radio-group">
-                                    <label class="radio-option">
-                                        <input type="radio" name="capacite" value="1 RDV à la fois">
-                                        <span class="custom-radio"></span>
-                                        <span class="option-text">1 RDV à la fois</span>
-                                    </label>
-                                    <label class="radio-option">
-                                        <input type="radio" name="capacite" value="Plusieurs RDV en parallèle">
-                                        <span class="custom-radio"></span>
-                                        <span class="option-text">Plusieurs RDV en parallèle (précisez ci-dessous)</span>
-                                    </label>
+                            <!-- Variante générique (coiffeur, garage, cabinet, coach, avocat…) -->
+                            <div class="booking-variant" id="booking-default">
+                                <div class="form-group">
+                                    <label for="prestations_resa">Prestations réservables <span class="required">*</span></label>
+                                    <textarea id="prestations_resa" name="prestations_resa" placeholder="Ex :&#10;1. Coupe homme — 30 min — 25€&#10;2. Coupe + couleur — 1h30 — 60€&#10;3. ..." rows="5"></textarea>
+                                    <p class="form-helper">Format suggéré : Nom — Durée — Tarif</p>
+                                    <div class="error-msg">Liste des prestations requise</div>
                                 </div>
-                                <div class="error-msg">Veuillez sélectionner</div>
+
+                                <div class="form-group">
+                                    <label>Capacité simultanée <span class="required">*</span></label>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="capacite" value="1 RDV à la fois">
+                                            <span class="custom-radio"></span>
+                                            <span class="option-text">1 RDV à la fois</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="capacite" value="Plusieurs RDV en parallèle">
+                                            <span class="custom-radio"></span>
+                                            <span class="option-text">Plusieurs RDV en parallèle (précisez ci-dessous)</span>
+                                        </label>
+                                    </div>
+                                    <div class="error-msg">Veuillez sélectionner</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="capacite_nb">Si parallèle, combien ?</label>
+                                    <input type="number" id="capacite_nb" name="capacite_nb" placeholder="Ex : 3" min="1">
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="capacite_nb">Si parallèle, combien ?</label>
-                                <input type="number" id="capacite_nb" name="capacite_nb" placeholder="Ex : 3" min="1">
+                            <!-- Variante Restauration (réservation de tables) -->
+                            <div class="booking-variant" id="booking-restaurant">
+                                <div class="form-group">
+                                    <label for="resto_creneaux">Créneaux de service <span class="required">*</span></label>
+                                    <textarea id="resto_creneaux" name="resto_creneaux" placeholder="Ex :&#10;Lundi-Vendredi midi : 12h-14h&#10;Lundi-Samedi soir : 19h-22h30&#10;Dimanche : fermé" rows="4"></textarea>
+                                    <div class="error-msg">Créneaux requis</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="resto_capacite_salle">Capacité de la salle (couverts) <span class="required">*</span></label>
+                                    <input type="number" id="resto_capacite_salle" name="resto_capacite_salle" placeholder="Ex : 40" min="1">
+                                    <div class="error-msg">Capacité requise</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="resto_duree_repas">Durée moyenne d'un repas <span class="required">*</span></label>
+                                    <input type="text" id="resto_duree_repas" name="resto_duree_repas" placeholder="Ex : 1h30 le midi, 2h le soir">
+                                    <div class="error-msg">Ce champ est requis</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="resto_table_max">Taille de groupe maximum acceptée ?</label>
+                                    <input type="text" id="resto_table_max" name="resto_table_max" placeholder="Ex : Jusqu'à 12 personnes — au-delà, contact direct">
+                                </div>
+                                <div class="form-group">
+                                    <label for="resto_acompte">Acompte exigé pour réserver ?</label>
+                                    <input type="text" id="resto_acompte" name="resto_acompte" placeholder="Ex : Pas d'acompte — ou 10€/personne pour groupe >8">
+                                </div>
                             </div>
 
+                            <!-- Variante Événementiel (location de salle / billetterie événements) -->
+                            <div class="booking-variant" id="booking-event">
+                                <div class="form-group">
+                                    <label for="event_venue_type">Type de réservation <span class="required">*</span></label>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="event_venue_type" value="Location de salle/lieu">
+                                            <span class="custom-radio"></span>
+                                            <span class="option-text">Location de salle / lieu</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="event_venue_type" value="Billetterie événement">
+                                            <span class="custom-radio"></span>
+                                            <span class="option-text">Billetterie d'événement (places)</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="event_venue_type" value="Les deux">
+                                            <span class="custom-radio"></span>
+                                            <span class="option-text">Les deux</span>
+                                        </label>
+                                    </div>
+                                    <div class="error-msg">Veuillez sélectionner</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event_venue_capacite">Capacité du lieu <span class="required">*</span></label>
+                                    <input type="text" id="event_venue_capacite" name="event_venue_capacite" placeholder="Ex : 200 personnes assises, 350 debout">
+                                    <div class="error-msg">Capacité requise</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event_venue_duree">Durée typique d'une location / événement</label>
+                                    <input type="text" id="event_venue_duree" name="event_venue_duree" placeholder="Ex : Soirée 19h-2h, journée 9h-18h">
+                                </div>
+                                <div class="form-group">
+                                    <label for="event_venue_equipement">Équipement inclus</label>
+                                    <textarea id="event_venue_equipement" name="event_venue_equipement" placeholder="Ex : Son, lumière, mobilier, vestiaire, parking, traiteur..." rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event_venue_tarifs">Tarifs <span class="required">*</span></label>
+                                    <textarea id="event_venue_tarifs" name="event_venue_tarifs" placeholder="Ex :&#10;Soirée privée — 1500€&#10;Mariage — 3500€&#10;Demi-journée — 700€" rows="4"></textarea>
+                                    <div class="error-msg">Tarifs requis</div>
+                                </div>
+                            </div>
+
+                            <!-- Champs communs aux 3 variantes (annulation + paiement) -->
                             <div class="form-group">
                                 <label for="annulation">Politique d'annulation <span class="required">*</span></label>
                                 <input type="text" id="annulation" name="annulation" placeholder="Ex : Annulation gratuite jusqu'à 24h avant">
@@ -745,6 +1011,8 @@
                             </div>
                         </div>
 
+                        <p class="form-helper" id="no-pack-specifics" style="text-align:center; padding: 20px 0;">Aucune spécificité supplémentaire pour votre pack — vous pouvez passer à l'étape finale.</p>
+
                         <h3 class="form-section-title">Détails complémentaires</h3>
 
                         <div class="form-group">
@@ -753,7 +1021,7 @@
                         </div>
 
                         <div class="form-buttons">
-                            <button type="button" class="btn-prev" onclick="prevPage(5)">Précédent</button>
+                            <button type="button" class="btn-prev" onclick="prevPage(6)">Précédent</button>
                             <button type="submit" class="btn-submit">Envoyer mes informations</button>
                         </div>
                     </div>
@@ -765,7 +1033,7 @@
 
     <script>
         var currentPage = 1;
-        var totalPages = 5;
+        var totalPages = 6;
 
         function updateStepper() {
             document.querySelectorAll('.stepper-step').forEach(function (step) {
@@ -795,12 +1063,20 @@
 
             pageEl.querySelectorAll('.form-group').forEach(function (g) { g.classList.remove('error'); });
 
+            function isHiddenConditional(el) {
+                var pack = el.closest('.pack-section');
+                if (pack && !pack.classList.contains('visible')) return true;
+                var sec = el.closest('.sector-section');
+                if (sec && !sec.classList.contains('visible')) return true;
+                var bv = el.closest('.booking-variant');
+                if (bv && !bv.classList.contains('visible')) return true;
+                return false;
+            }
+
             // Inputs/select/textarea required (only visible ones)
             pageEl.querySelectorAll('input[required], select[required], textarea[required]').forEach(function (input) {
                 if (input.type === 'radio' || input.type === 'checkbox') return;
-                // Skip if hidden (inside a hidden pack-section)
-                var packParent = input.closest('.pack-section');
-                if (packParent && !packParent.classList.contains('visible')) return;
+                if (isHiddenConditional(input)) return;
                 if (!input.value.trim() || !input.checkValidity()) {
                     input.closest('.form-group').classList.add('error');
                     valid = false;
@@ -809,8 +1085,7 @@
 
             // Radio groups (skip hidden)
             pageEl.querySelectorAll('.radio-group').forEach(function (group) {
-                var packParent = group.closest('.pack-section');
-                if (packParent && !packParent.classList.contains('visible')) return;
+                if (isHiddenConditional(group)) return;
                 var firstRadio = group.querySelector('input[type="radio"]');
                 if (!firstRadio) return;
                 var name = firstRadio.name;
@@ -824,8 +1099,7 @@
 
             // Checkbox groups (skip hidden, skip standalone single checkboxes)
             pageEl.querySelectorAll('.checkbox-group').forEach(function (group) {
-                var packParent = group.closest('.pack-section');
-                if (packParent && !packParent.classList.contains('visible')) return;
+                if (isHiddenConditional(group)) return;
                 var formGroup = group.closest('.form-group');
                 var isRequired = formGroup.querySelector('label .required');
                 var checked = group.querySelectorAll('input[type="checkbox"]:checked');
@@ -858,21 +1132,90 @@
             }
         });
 
-        // Toggle pack-specific sections based on selection
-        document.querySelectorAll('input[name="pack_choisi"]').forEach(function (radio) {
-            radio.addEventListener('change', function () {
-                var ecom = document.getElementById('section-ecommerce');
-                var booking = document.getElementById('section-booking');
-                ecom.classList.remove('visible');
-                booking.classList.remove('visible');
-                if (this.value === 'Site E-Commerce') ecom.classList.add('visible');
-                else if (this.value === 'Site Booking') booking.classList.add('visible');
+        var sectorMap = {
+            'Restauration': 'sec-restauration',
+            'Beauté / Coiffure': 'sec-beaute-sante',
+            'Santé / Bien-être': 'sec-beaute-sante',
+            'Artisan / Bâtiment': 'sec-artisan',
+            'Auto / Garage': 'sec-auto',
+            'Immobilier / Agence': 'sec-immobilier',
+            'Cabinet / Agence': 'sec-cabinet',
+            'Coach / Formation': 'sec-coach',
+            'Avocat / Conseil': 'sec-avocat',
+            'Événementiel': 'sec-evenementiel'
+        };
+        var allSectorSections = ['sec-restauration','sec-beaute-sante','sec-artisan','sec-auto','sec-immobilier','sec-cabinet','sec-coach','sec-avocat','sec-evenementiel'];
+        var allBookingVariants = ['booking-default','booking-restaurant','booking-event'];
+
+        function getPackValue() {
+            var r = document.querySelector('input[name="pack_choisi"]:checked');
+            return r ? r.value : null;
+        }
+
+        function updatePackAndSectorSections() {
+            var pack = getPackValue();
+            var secteur = (document.getElementById('secteur') || {}).value || '';
+
+            // Pack-specific
+            var ecom = document.getElementById('section-ecommerce');
+            var booking = document.getElementById('section-booking');
+            var noPackNote = document.getElementById('no-pack-specifics');
+            ecom.classList.remove('visible');
+            booking.classList.remove('visible');
+            var isBooking = (pack === 'Site Booking (sans paiement)' || pack === 'Site Booking (avec paiement)');
+            if (pack === 'Site E-Commerce') {
+                ecom.classList.add('visible');
+                noPackNote.style.display = 'none';
+            } else if (isBooking) {
+                booking.classList.add('visible');
+                noPackNote.style.display = 'none';
+            } else {
+                noPackNote.style.display = '';
+            }
+
+            // Booking variant (depends on secteur)
+            allBookingVariants.forEach(function (id) {
+                document.getElementById(id).classList.remove('visible');
             });
+            if (isBooking) {
+                if (secteur === 'Restauration') {
+                    document.getElementById('booking-restaurant').classList.add('visible');
+                } else if (secteur === 'Événementiel') {
+                    document.getElementById('booking-event').classList.add('visible');
+                } else {
+                    document.getElementById('booking-default').classList.add('visible');
+                }
+            }
+
+            // Sector-specific (page 5)
+            allSectorSections.forEach(function (id) {
+                document.getElementById(id).classList.remove('visible');
+            });
+            var target = sectorMap[secteur];
+            if (target) document.getElementById(target).classList.add('visible');
+
+            // Zone d'intervention (page 3) — visible uniquement pour Artisan/Auto
+            var zoneWrap = document.getElementById('zone-wrap');
+            if (zoneWrap) {
+                if (secteur === 'Artisan / Bâtiment' || secteur === 'Auto / Garage') {
+                    zoneWrap.classList.add('visible');
+                } else {
+                    zoneWrap.classList.remove('visible');
+                }
+            }
+        }
+
+        document.querySelectorAll('input[name="pack_choisi"]').forEach(function (radio) {
+            radio.addEventListener('change', updatePackAndSectorSections);
         });
+        var secteurSelect = document.getElementById('secteur');
+        if (secteurSelect) {
+            secteurSelect.addEventListener('change', updatePackAndSectorSections);
+        }
 
         document.getElementById('projectForm').addEventListener('submit', async function (e) {
             e.preventDefault();
-            if (!validatePage(5)) return;
+            if (!validatePage(6)) return;
 
             var form = document.getElementById('projectForm');
             if (form._gotcha && form._gotcha.value) return false;
@@ -899,10 +1242,10 @@
                 data['Email pro'] = fd.get('email') || '';
                 data['Téléphone pro'] = fd.get('telephone') || '';
                 data['Pack choisi'] = pack;
+                data['Secteur'] = fd.get('secteur') || 'Non renseigné';
 
                 // Entreprise
                 data['SIRET'] = fd.get('siret') || '';
-                data['Activité principale'] = fd.get('activite') || '';
                 if (fd.get('site_actuel')) data['Site actuel'] = fd.get('site_actuel');
                 if (fd.get('acces_site')) data['Accès site actuel'] = fd.get('acces_site');
 
@@ -913,7 +1256,7 @@
                 data['Email pro (à afficher)'] = fd.get('email_public') || '';
                 if (fd.get('whatsapp')) data['WhatsApp'] = fd.get('whatsapp');
                 data['Horaires'] = fd.get('horaires') || '';
-                data['Zone d\'intervention'] = fd.get('zone') || '';
+                if (fd.get('zone')) data['Zone d\'intervention'] = fd.get('zone');
 
                 // Branding
                 data['Logo'] = fd.get('logo_status') || 'Non renseigné';
@@ -929,24 +1272,68 @@
                 if (fd.get('linkedin')) data['LinkedIn'] = fd.get('linkedin');
                 if (fd.get('youtube')) data['YouTube'] = fd.get('youtube');
 
-                // Contenu
+                // Contenu — Communs
+                data['À propos'] = fd.get('a_propos') || '';
+                if (fd.get('temoignages')) data['Témoignages clients'] = fd.get('temoignages');
+                data['Mots-clés Google'] = fd.get('mots_cles_google') || '';
                 data['Services / prestations'] = fd.get('services') || '';
+
+                // Contenu — Sectoriel (uniquement si rempli)
+                [
+                    ['resto_carte', 'Carte / menu'],
+                    ['resto_specialites', 'Cuisine / spécialités'],
+                    ['bs_bios', 'Bios praticiens'],
+                    ['bs_produits_vendus', 'Produits vendus'],
+                    ['artisan_certifications', 'Certifications / labels'],
+                    ['artisan_departement', 'Département(s) d\'intervention'],
+                    ['artisan_villes', 'Villes d\'intervention'],
+                    ['auto_marques', 'Marques traitées'],
+                    ['immo_partenaires_noms', 'Partenaires'],
+                    ['immo_equipe_noms', 'Liste des agents'],
+                    ['cab_bios_equipe', 'Bios équipe'],
+                    ['cab_etudes_cas', 'Études de cas'],
+                    ['coach_bio', 'Bio coach'],
+                    ['coach_formations_detail', 'Catalogue formations'],
+                    ['coach_temoignages_eleves', 'Témoignages élèves'],
+                    ['avocat_bios_equipe', 'Bios équipe avocats'],
+                    ['avocat_specialites_detail', 'Spécialités juridiques détaillées'],
+                    ['avocat_affaires', 'Affaires emblématiques'],
+                    ['event_agenda_avenir', 'Agenda événements à venir']
+                ].forEach(function (pair) {
+                    var v = fd.get(pair[0]);
+                    if (v) data[pair[1]] = v;
+                });
 
                 // E-Commerce (only if pack matches)
                 if (pack === 'Site E-Commerce') {
                     data['Catalogue produits'] = fd.get('catalogue') || '';
-                    data['Photos produits (lien)'] = fd.get('photos_produits') || '';
+                    if (fd.get('variantes')) data['Variantes produits'] = fd.get('variantes');
                     data['Modes de paiement'] = fd.getAll('modes_paiement').join(', ');
                     data['Modes de livraison'] = fd.getAll('modes_livraison').join(', ');
                 }
 
-                // Booking (only if pack matches)
-                if (pack === 'Site Booking') {
-                    data['Prestations réservables'] = fd.get('prestations_resa') || '';
-                    data['Capacité'] = fd.get('capacite') || '';
-                    if (fd.get('capacite_nb')) data['Capacité (nombre)'] = fd.get('capacite_nb');
-                    data['Politique annulation'] = fd.get('annulation') || '';
-                    data['Paiement réservation'] = fd.get('paiement_resa') || '';
+                // Booking (only if pack matches — variantes selon secteur)
+                if (pack === 'Site Booking (sans paiement)' || pack === 'Site Booking (avec paiement)') {
+                    var secteur = fd.get('secteur') || '';
+                    if (secteur === 'Restauration') {
+                        data['Booking — Créneaux service'] = fd.get('resto_creneaux') || '';
+                        data['Booking — Capacité salle (couverts)'] = fd.get('resto_capacite_salle') || '';
+                        data['Booking — Durée moyenne repas'] = fd.get('resto_duree_repas') || '';
+                        if (fd.get('resto_table_max')) data['Booking — Taille groupe max'] = fd.get('resto_table_max');
+                        if (fd.get('resto_acompte')) data['Booking — Acompte'] = fd.get('resto_acompte');
+                    } else if (secteur === 'Événementiel') {
+                        data['Booking — Type'] = fd.get('event_venue_type') || '';
+                        data['Booking — Capacité du lieu'] = fd.get('event_venue_capacite') || '';
+                        if (fd.get('event_venue_duree')) data['Booking — Durée typique'] = fd.get('event_venue_duree');
+                        if (fd.get('event_venue_equipement')) data['Booking — Équipement inclus'] = fd.get('event_venue_equipement');
+                        data['Booking — Tarifs'] = fd.get('event_venue_tarifs') || '';
+                    } else {
+                        data['Booking — Prestations réservables'] = fd.get('prestations_resa') || '';
+                        data['Booking — Capacité'] = fd.get('capacite') || '';
+                        if (fd.get('capacite_nb')) data['Booking — Capacité (nombre)'] = fd.get('capacite_nb');
+                    }
+                    data['Booking — Politique annulation'] = fd.get('annulation') || '';
+                    data['Booking — Paiement'] = fd.get('paiement_resa') || '';
                 }
 
                 if (fd.get('commentaires')) data['Commentaires'] = fd.get('commentaires');

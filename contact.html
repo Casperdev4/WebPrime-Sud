@@ -303,8 +303,23 @@
             <nav class="nav" id="nav">
                 <ul>
                     <li><a href="https://webprime-sud.fr/creation-site-internet.html">Sites Web</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#">Templates</a>
+                        <ul class="dropdown-menu">
+                            <li class="has-submenu"><a href="#">Automobile</a><ul class="dropdown-submenu"><li><a href="https://aqua-monkey-704831.hostingersite.com/" target="_blank">Garage</a></li><li><a href="http://mypark-orly.fr/" target="_blank">MyPark Orly</a></li></ul></li>
+                            <li class="has-submenu"><a href="#">E-commerce</a><ul class="dropdown-submenu"><li><a href="https://flt-jjb.com/" target="_blank">FLT JJB</a></li><li><a href="http://hype-store-paris.fr/" target="_blank">Hype Store Paris</a></li><li><a href="https://kazeko-fight.com/" target="_blank">Kazeko Fight</a></li><li><a href="https://slategrey-reindeer-208796.hostingersite.com/" target="_blank">Multimédia</a></li><li><a href="https://samba-sima.com/" target="_blank">Samba Sima</a></li><li><a href="https://orangered-jay-633222.hostingersite.com/" target="_blank">Senzufit</a></li><li><a href="http://sogroomi.fr/" target="_blank">Sogroomi</a></li><li><a href="https://yakare-cosmetics.com/" target="_blank">Yakaré Cosmetics</a></li></ul></li>
+                            <li class="has-submenu"><a href="#">Formation</a><ul class="dropdown-submenu"><li><a href="https://flt-house.com/" target="_blank">FLT House</a></li><li><a href="https://formation-btp-59.fr/" target="_blank">Formation BTP 59</a></li></ul></li>
+                            <li class="has-submenu"><a href="#">Restauration Rapide</a><ul class="dropdown-submenu"><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/coffee-bar/" target="_blank">Coffee Bar</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/thai-food/" target="_blank">Cuisine Thaï</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/food-truck/" target="_blank">Food Truck</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/pizzeria/" target="_blank">Pizzeria</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/indian-restaurant/" target="_blank">Restaurant Indien</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/steakhouse-grill/" target="_blank">Steakhouse & Grill</a></li></ul></li>
+                            <li class="has-submenu"><a href="#">Restaurant & Bar</a><ul class="dropdown-submenu"><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/cafe-home/" target="_blank">Café</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/mediterranean-cafe/" target="_blank">Café Méditerranéen</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/cocktail-bar/" target="_blank">Cocktail Bar</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/seafood-restaurant/" target="_blank">Fruits de Mer</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/fine-dining-home/" target="_blank">Gastronomique</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/patisserie-home/" target="_blank">Pâtisserie</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/pizzeria-home/" target="_blank">Pizzeria</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/steak-house/" target="_blank">Steak House</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/sushi-restaurant/" target="_blank">Sushi</a></li></ul></li>
+                            <li><a href="https://yellow-gorilla-456049.hostingersite.com/" target="_blank">Auto-école</a></li>
+                            <li><a href="https://paleturquoise-partridge-371738.hostingersite.com/" target="_blank">Fitness & Sport</a></li>
+                            <li><a href="https://rosybrown-cormorant-956760.hostingersite.com/" target="_blank">Photographie</a></li>
+                            <li><a href="https://midnightblue-viper-637319.hostingersite.com/" target="_blank">Transport VTC</a></li>
+                        </ul>
+                    </li>
                     <li><a href="https://webprime-sud.fr/creation-application-mobile.html">Applications Mobiles</a></li>
                     <li><a href="https://daelia-digital.fr/premiere-page-google/" target="_blank">1ère Page Google</a></li>
+                    <li><a href="https://webprime-sud.fr/contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -326,11 +341,6 @@
                 <div class="stepper-line"></div>
                 <div class="stepper-step" data-step="2">
                     <div class="stepper-circle">2</div>
-                    <div class="stepper-label">Activité</div>
-                </div>
-                <div class="stepper-line"></div>
-                <div class="stepper-step" data-step="3">
-                    <div class="stepper-circle">3</div>
                     <div class="stepper-label">Coordonnées</div>
                 </div>
             </div>
@@ -347,10 +357,28 @@
                         <p class="form-page-subtitle">Parlez-nous de votre présence en ligne</p>
 
                         <div class="form-group">
+                            <label>Quel type de projet ? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="type_projet" value="Site internet" required>
+                                    <span class="custom-radio"></span>
+                                    <span class="option-text">Site internet</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="type_projet" value="Application mobile">
+                                    <span class="custom-radio"></span>
+                                    <span class="option-text">Application mobile</span>
+                                </label>
+                            </div>
+                            <div class="error-msg">Veuillez sélectionner un type de projet</div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-site">
+                        <div class="form-group">
                             <label>Votre entreprise possède-t-elle déjà un site internet ? <span class="required">*</span></label>
                             <div class="radio-group">
                                 <label class="radio-option">
-                                    <input type="radio" name="site_existant" value="Oui" required>
+                                    <input type="radio" name="site_existant" value="Oui">
                                     <span class="custom-radio"></span>
                                     <span class="option-text">Oui</span>
                                 </label>
@@ -394,12 +422,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Quel type de site avez-vous besoin ? <span class="required">*</span></label>
+                            <label>Quelle formule de site souhaitez-vous ? <span class="required">*</span></label>
                             <div class="radio-group">
                                 <label class="radio-option">
-                                    <input type="radio" name="type_site" value="Pack 1ère page Google" required>
+                                    <input type="radio" name="type_site" value="Pack 1ère page Google">
                                     <span class="custom-radio"></span>
-                                    <span class="option-text">Pack 1ère page Google</span>
+                                    <span class="option-text">Pack 1ère page Google (Vitrine + SEO inclus)</span>
                                 </label>
                                 <label class="radio-option">
                                     <input type="radio" name="type_site" value="Vitrine">
@@ -409,63 +437,199 @@
                                 <label class="radio-option">
                                     <input type="radio" name="type_site" value="Réservation (sans paiement)">
                                     <span class="custom-radio"></span>
-                                    <span class="option-text">Réservation (sans paiement)</span>
+                                    <span class="option-text">Réservation sans paiement</span>
                                 </label>
                                 <label class="radio-option">
                                     <input type="radio" name="type_site" value="Réservation (avec paiement)">
                                     <span class="custom-radio"></span>
-                                    <span class="option-text">Réservation (avec paiement)</span>
+                                    <span class="option-text">Réservation avec paiement</span>
                                 </label>
                                 <label class="radio-option">
                                     <input type="radio" name="type_site" value="E-Commerce">
                                     <span class="custom-radio"></span>
                                     <span class="option-text">E-Commerce</span>
                                 </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="type_site" value="Application mobile">
-                                    <span class="custom-radio"></span>
-                                    <span class="option-text">Application mobile</span>
-                                </label>
                             </div>
-                            <div class="error-msg">Veuillez sélectionner un type</div>
+                            <div class="error-msg">Veuillez sélectionner une formule</div>
                         </div>
 
-                        <div class="form-group">
-                            <label>Quel est votre objectif principal ? <span class="required">*</span></label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="objectif" value="Améliorer mon image professionnelle">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Améliorer mon image professionnelle</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="objectif" value="Être en première page Google">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Être en première page Google</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="objectif" value="Lancer mon activité">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Lancer mon activité</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="objectif" value="Autre">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Autre</span>
-                                </label>
+                        <div class="conditional-field" id="cond-ecommerce">
+                            <div class="form-group">
+                                <label>Combien de produits comptez-vous vendre ? <span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_nb_produits" value="Moins de 50">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Moins de 50</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_nb_produits" value="50 à 500">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">50 à 500</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_nb_produits" value="500 à 5000">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">500 à 5000</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_nb_produits" value="Plus de 5000">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Plus de 5000</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="error-msg">Veuillez sélectionner au moins une option</div>
+
+                            <div class="form-group">
+                                <label>Vos produits sont-ils... <span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_type_produits" value="Physiques">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Physiques</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_type_produits" value="Numériques">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Numériques (téléchargeables)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_type_produits" value="Services">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Services</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_type_produits" value="Abonnements">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Abonnements</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_type_produits" value="Mix">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Mix</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Avez-vous déjà les photos produits ? <span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_photos" value="Oui prêtes">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Oui, prêtes</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_photos" value="Partiellement">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Partiellement</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_photos" value="Non à shooter">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Non, à shooter</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Quels moyens de paiement souhaitez-vous proposer ?</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_paiements" value="CB (Stripe/PayPlug)">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">CB (Stripe / PayPlug)</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_paiements" value="PayPal">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">PayPal</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_paiements" value="Apple/Google Pay">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">Apple Pay &amp; Google Pay</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_paiements" value="Crypto">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">Crypto</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Zone de livraison ? <span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_zone_livraison" value="France uniquement">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">France uniquement</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_zone_livraison" value="Europe">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Europe</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_zone_livraison" value="Monde">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Monde</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Quels transporteurs souhaitez-vous proposer ?</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_transporteurs" value="Colissimo">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">Colissimo</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_transporteurs" value="Mondial Relay">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">Mondial Relay</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_transporteurs" value="Chronopost">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">Chronopost</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_transporteurs" value="Click & Collect">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">Click &amp; Collect</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="ecom_transporteurs" value="Retrait magasin">
+                                        <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                        <span class="option-text">Retrait magasin</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Avez-vous déjà un catalogue produits (Excel/CSV) ? <span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_catalogue" value="Oui import à faire">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Oui (import à faire)</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="ecom_catalogue" value="Non à créer ensemble">
+                                        <span class="custom-radio"></span>
+                                        <span class="option-text">Non, à créer ensemble</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
                         </div>
 
-                        <div class="form-buttons">
-                            <button type="button" class="btn-next" onclick="nextPage(1)">Suivant</button>
-                        </div>
-                    </div>
-
-                    <div class="form-page" data-page="2">
-                        <h2 class="form-page-title">Votre activité</h2>
-                        <p class="form-page-subtitle">Aidez-nous à mieux vous connaître</p>
-
+                        <div class="conditional-field visible" id="cond-secteur">
                         <div class="form-group">
                             <label for="secteur">Quel est votre secteur d'activité ? <span class="required">*</span></label>
                             <select id="secteur" name="secteur" required>
@@ -477,128 +641,343 @@
                                 <option value="Santé / Bien-être">Santé / Bien-être</option>
                                 <option value="Auto / Garage">Auto / Garage</option>
                                 <option value="Immobilier / Agence">Immobilier / Agence</option>
+                                <option value="Cabinet / Agence">Cabinet / Agence</option>
+                                <option value="Coach / Formation">Coach / Formation</option>
+                                <option value="Avocat / Conseil">Avocat / Conseil</option>
+                                <option value="Événementiel">Événementiel</option>
                                 <option value="Autre">Autre</option>
                             </select>
                             <div class="error-msg">Veuillez sélectionner un secteur</div>
                         </div>
 
+                        <div class="conditional-field" id="cond-restauration">
+                            <div class="form-group">
+                                <label>Souhaitez-vous prendre des réservations en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="resto_reservations" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="resto_reservations" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                    <label class="radio-option"><input type="radio" name="resto_reservations" value="Plus tard"><span class="custom-radio"></span><span class="option-text">Plus tard</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Click &amp; Collect / Commande à emporter ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="resto_clickcollect" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="resto_clickcollect" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Livraison ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="resto_livraison" value="Oui plateformes"><span class="custom-radio"></span><span class="option-text">Oui (Uber Eats, Deliveroo...)</span></label>
+                                    <label class="radio-option"><input type="radio" name="resto_livraison" value="Oui en propre"><span class="custom-radio"></span><span class="option-text">Oui (livreurs en propre)</span></label>
+                                    <label class="radio-option"><input type="radio" name="resto_livraison" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Carte / Menu en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="resto_menu" value="PDF"><span class="custom-radio"></span><span class="option-text">PDF téléchargeable</span></label>
+                                    <label class="radio-option"><input type="radio" name="resto_menu" value="Page web interactive"><span class="custom-radio"></span><span class="option-text">Page web interactive</span></label>
+                                    <label class="radio-option"><input type="radio" name="resto_menu" value="Les deux"><span class="custom-radio"></span><span class="option-text">Les deux</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="resto_couverts">Capacité de l'établissement (nombre de couverts) ?</label>
+                                <input type="text" id="resto_couverts" name="resto_couverts" placeholder="Ex : 40 couverts">
+                            </div>
+                            <div class="form-group">
+                                <label>Plusieurs établissements ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="resto_multi" value="Un seul"><span class="custom-radio"></span><span class="option-text">Un seul</span></label>
+                                    <label class="radio-option"><input type="radio" name="resto_multi" value="Plusieurs"><span class="custom-radio"></span><span class="option-text">Plusieurs (préciser dans commentaires)</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-beaute-sante">
+                            <div class="form-group">
+                                <label>Prise de rendez-vous en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="bs_rdv" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="bs_rdv" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                    <label class="radio-option"><input type="radio" name="bs_rdv" value="Plus tard"><span class="custom-radio"></span><span class="option-text">Plus tard</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Vente de produits sur le site ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="bs_vente_produits" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="bs_vente_produits" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Galerie avant/après ou portfolio ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="bs_galerie" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="bs_galerie" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bs_praticiens">Nombre de praticiens / salariés ?</label>
+                                <input type="text" id="bs_praticiens" name="bs_praticiens" placeholder="Ex : 3 praticiens">
+                            </div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-artisan">
+                            <div class="form-group">
+                                <label for="artisan_departement">Département(s) d'intervention ?</label>
+                                <input type="text" id="artisan_departement" name="artisan_departement" placeholder="Ex : 91 Essonne, 77 Seine-et-Marne">
+                            </div>
+                            <div class="form-group">
+                                <label for="artisan_villes">Villes d'intervention ?</label>
+                                <input type="text" id="artisan_villes" name="artisan_villes" placeholder="Ex : Évry, Corbeil-Essonnes, Massy">
+                            </div>
+                            <div class="form-group">
+                                <label>Devis en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="artisan_devis" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="artisan_devis" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Galerie de réalisations / portfolio ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="artisan_galerie" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="artisan_galerie" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Type de prestations principales ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="artisan_prestations" value="Rénovation"><span class="custom-radio"></span><span class="option-text">Rénovation</span></label>
+                                    <label class="radio-option"><input type="radio" name="artisan_prestations" value="Dépannage"><span class="custom-radio"></span><span class="option-text">Dépannage</span></label>
+                                    <label class="radio-option"><input type="radio" name="artisan_prestations" value="Neuf"><span class="custom-radio"></span><span class="option-text">Construction neuve</span></label>
+                                    <label class="radio-option"><input type="radio" name="artisan_prestations" value="Multi"><span class="custom-radio"></span><span class="option-text">Multi-prestations</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Vous travaillez plutôt avec...</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="artisan_cible" value="B2C"><span class="custom-radio"></span><span class="option-text">Particuliers (B2C)</span></label>
+                                    <label class="radio-option"><input type="radio" name="artisan_cible" value="B2B"><span class="custom-radio"></span><span class="option-text">Entreprises (B2B)</span></label>
+                                    <label class="radio-option"><input type="radio" name="artisan_cible" value="Les deux"><span class="custom-radio"></span><span class="option-text">Les deux</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-auto">
+                            <div class="form-group">
+                                <label>Prise de rendez-vous en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="auto_rdv" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="auto_rdv" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Devis en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="auto_devis" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="auto_devis" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Vente de pièces en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="auto_pieces" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="auto_pieces" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Type de garage ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="auto_type" value="Mécanique"><span class="custom-radio"></span><span class="option-text">Mécanique</span></label>
+                                    <label class="radio-option"><input type="radio" name="auto_type" value="Carrosserie"><span class="custom-radio"></span><span class="option-text">Carrosserie</span></label>
+                                    <label class="radio-option"><input type="radio" name="auto_type" value="Pneus"><span class="custom-radio"></span><span class="option-text">Pneus</span></label>
+                                    <label class="radio-option"><input type="radio" name="auto_type" value="Multi-services"><span class="custom-radio"></span><span class="option-text">Multi-services</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-immobilier">
+                            <div class="form-group">
+                                <label>Catalogue de biens / annonces ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="immo_catalogue" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="immo_catalogue" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Filtres de recherche (prix, surface, ville) ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="immo_filtres" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="immo_filtres" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Formulaire d'estimation en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="immo_estimation" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="immo_estimation" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Backoffice agent pour gérer les annonces ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="immo_backoffice" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="immo_backoffice" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                    <label class="radio-option"><input type="radio" name="immo_backoffice" value="Plus tard"><span class="custom-radio"></span><span class="option-text">Plus tard</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Activité de l'agence ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="immo_activite" value="Location"><span class="custom-radio"></span><span class="option-text">Location</span></label>
+                                    <label class="radio-option"><input type="radio" name="immo_activite" value="Vente"><span class="custom-radio"></span><span class="option-text">Vente</span></label>
+                                    <label class="radio-option"><input type="radio" name="immo_activite" value="Les deux"><span class="custom-radio"></span><span class="option-text">Les deux</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-cabinet">
+                            <div class="form-group">
+                                <label>Prise de rendez-vous en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="cab_rdv" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="cab_rdv" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cab_collaborateurs">Nombre de collaborateurs ?</label>
+                                <input type="text" id="cab_collaborateurs" name="cab_collaborateurs" placeholder="Ex : 5 collaborateurs">
+                            </div>
+                            <div class="form-group">
+                                <label>Portfolio / cas clients / réalisations ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="cab_portfolio" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="cab_portfolio" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Demande de devis / consultation gratuite ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="cab_devis" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="cab_devis" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-coach">
+                            <div class="form-group">
+                                <label>Vendez-vous des formations en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="coach_formations" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="coach_formations" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                    <label class="radio-option"><input type="radio" name="coach_formations" value="Plus tard"><span class="custom-radio"></span><span class="option-text">Plus tard</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Calendrier de sessions en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="coach_calendrier" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="coach_calendrier" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Espace membre / accès aux cours ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="coach_espace_membre" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="coach_espace_membre" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                    <label class="radio-option"><input type="radio" name="coach_espace_membre" value="Plus tard"><span class="custom-radio"></span><span class="option-text">Plus tard</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Modèle de paiement ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="coach_paiement" value="À la session"><span class="custom-radio"></span><span class="option-text">À la session</span></label>
+                                    <label class="radio-option"><input type="radio" name="coach_paiement" value="Abonnement"><span class="custom-radio"></span><span class="option-text">Abonnement</span></label>
+                                    <label class="radio-option"><input type="radio" name="coach_paiement" value="Mix"><span class="custom-radio"></span><span class="option-text">Mix</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-avocat">
+                            <div class="form-group">
+                                <label>Prise de RDV / consultation en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="avocat_rdv" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="avocat_rdv" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Espace client sécurisé (partage de documents) ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="avocat_espace_client" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="avocat_espace_client" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                    <label class="radio-option"><input type="radio" name="avocat_espace_client" value="Plus tard"><span class="custom-radio"></span><span class="option-text">Plus tard</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="avocat_specialites">Spécialités juridiques principales ?</label>
+                                <input type="text" id="avocat_specialites" name="avocat_specialites" placeholder="Ex : Droit du travail, droit pénal...">
+                            </div>
+                            <div class="form-group">
+                                <label>Formulaire de pré-qualification (avant RDV) ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="avocat_prequalif" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="avocat_prequalif" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conditional-field" id="cond-evenementiel">
+                            <div class="form-group">
+                                <label>Billetterie en ligne ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="event_billetterie" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="event_billetterie" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Type d'événements ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="event_type" value="Mariages"><span class="custom-radio"></span><span class="option-text">Mariages / vie privée</span></label>
+                                    <label class="radio-option"><input type="radio" name="event_type" value="Pro"><span class="custom-radio"></span><span class="option-text">Pro / corporate</span></label>
+                                    <label class="radio-option"><input type="radio" name="event_type" value="Concerts/festivals"><span class="custom-radio"></span><span class="option-text">Concerts / festivals</span></label>
+                                    <label class="radio-option"><input type="radio" name="event_type" value="Mix"><span class="custom-radio"></span><span class="option-text">Mix</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Agenda public des événements ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="event_agenda" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="event_agenda" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Galerie photos/vidéos d'événements passés ?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="event_galerie" value="Oui"><span class="custom-radio"></span><span class="option-text">Oui</span></label>
+                                    <label class="radio-option"><input type="radio" name="event_galerie" value="Non"><span class="custom-radio"></span><span class="option-text">Non</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
                         <div class="form-group">
-                            <label for="metier">Quel est votre métier principal ? <span class="required">*</span></label>
+                            <label for="metier">Quel est votre métier précis ? <span class="required">*</span></label>
                             <input type="text" id="metier" name="metier" placeholder="Ex : Plombier, Coiffeur, Restaurateur..." required>
                             <div class="error-msg">Ce champ est requis</div>
                         </div>
 
-                        <div class="form-group">
-                            <label>Depuis combien de temps votre entreprise existe ? <span class="required">*</span></label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="anciennete" value="Moins d'un an">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Moins d'un an</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="anciennete" value="1 à 3 ans">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">1 à 3 ans</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="anciennete" value="3 à 10 ans">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">3 à 10 ans</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="anciennete" value="Plus de 10 ans">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Plus de 10 ans</span>
-                                </label>
-                            </div>
-                            <div class="error-msg">Veuillez sélectionner au moins une option</div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Vos clients viennent-ils du : <span class="required">*</span></label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="source_clients" value="Bouche à oreille">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Bouche à oreille</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="source_clients" value="Fiche Google">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Fiche Google</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="source_clients" value="Google Ads">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Google Ads</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="source_clients" value="Carte de visite, flyer">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Carte de visite, flyer ect.</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="source_clients" value="Réseaux sociaux">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Réseaux sociaux</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="source_clients" value="Rien pour le moment">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Rien pour le moment</span>
-                                </label>
-                            </div>
-                            <div class="error-msg">Veuillez sélectionner au moins une option</div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="clients">Combien de clients avez-vous en moyenne par mois ? <span class="required">*</span></label>
-                            <input type="number" id="clients" name="clients_mois" placeholder="Ex : 30" min="0" required>
-                            <div class="error-msg">Ce champ est requis</div>
-                        </div>
-
                         <div class="form-buttons">
-                            <button type="button" class="btn-prev" onclick="prevPage(2)">Précédent</button>
-                            <button type="button" class="btn-next" onclick="nextPage(2)">Suivant</button>
+                            <button type="button" class="btn-next" onclick="nextPage(1)">Suivant</button>
                         </div>
                     </div>
 
-                    <div class="form-page" data-page="3">
+                    <div class="form-page" data-page="2">
                         <h2 class="form-page-title">Vos coordonnées</h2>
                         <p class="form-page-subtitle">Dernière étape avant de recevoir votre offre</p>
-
-                        <div class="form-group">
-                            <label>Quelle phrase décrit le mieux votre situation ? <span class="required">*</span></label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="situation" value="J'ai besoin de clients rapidement">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">J'ai besoin de clients rapidement</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="situation" value="Je veux passer à la vitesse supérieure">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Je veux passer à la vitesse supérieure</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="situation" value="Je veux un site + SEO complet">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Je veux un site + SEO complet</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="situation" value="Je cherche juste des informations">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Je cherche juste des informations pour l'instant</span>
-                                </label>
-                                <label class="checkbox-option">
-                                    <input type="checkbox" name="situation" value="Autre">
-                                    <span class="custom-check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-                                    <span class="option-text">Autre</span>
-                                </label>
-                            </div>
-                            <div class="error-msg">Veuillez sélectionner au moins une option</div>
-                        </div>
 
                         <div class="form-group">
                             <label for="comments">Commentaires</label>
@@ -627,7 +1006,7 @@
                         </div>
 
                         <div class="form-buttons">
-                            <button type="button" class="btn-prev" onclick="prevPage(3)">Précédent</button>
+                            <button type="button" class="btn-prev" onclick="prevPage(2)">Précédent</button>
                             <button type="submit" class="btn-submit">Obtenir mon Offre</button>
                         </div>
                     </div>
@@ -637,15 +1016,13 @@
         </div>
     </section>
 
-
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>WebPrime</h4>
-                    <p>Création de sites internet et applications mobiles haut de gamme dans l'Alpes-Maritimes (06)</p>
+                    <p>Création de sites internet et applications mobiles haut de gamme partout en France</p>
                 </div>
-
                 <div class="footer-col">
                     <h4>Nos Services</h4>
                     <ul>
@@ -656,7 +1033,6 @@
                         <li><a href="creation-application-mobile.html">Application Mobile</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
@@ -664,31 +1040,26 @@
                         <li><a href="https://webprime-sud.fr">webprime-sud.fr</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h4>Suivez-nous</h4>
                     <div class="social-links">
                         <a href="https://www.instagram.com/webprime.es" target="_blank" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E4405F">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
                         <a href="https://www.tiktok.com/@kazeko_fight" target="_blank" aria-label="TikTok">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
-                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
                         </a>
-                        <a href="https://snapchat.com/t/qEbNohNU" target="_blank" aria-label="Snapchat">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFFC00">
-                                <path d="M5.829 4.533c-.6 1.344-.363 3.752-.267 5.436-.648.359-1.48-.271-1.951-.271-.49 0-1.075.322-1.167.802-.066.346.089.85 1.201 1.289.43.17 1.453.37 1.69.928.333.784-1.71 4.403-4.918 4.931-.251.041-.43.265-.416.519.056.975 2.242 1.357 3.211 1.507.099.134.179.7.306 1.131.057.193.204.424.582.424.493 0 1.312-.38 2.738-.144 1.398.233 2.712 2.215 5.235 2.215 2.345 0 3.744-1.991 5.09-2.215.779-.129 1.448-.088 2.196.058.515.101.977.157 1.124-.349.129-.437.208-.992.305-1.123.96-.149 3.156-.53 3.211-1.505.014-.254-.165-.477-.416-.519-3.154-.52-5.259-4.128-4.918-4.931.236-.557 1.252-.755 1.69-.928.814-.321 1.222-.716 1.213-1.173-.011-.585-.715-.934-1.233-.934-.527 0-1.284.624-1.897.286.096-1.698.332-4.095-.267-5.438-1.135-2.543-3.66-3.829-6.184-3.829-2.508 0-5.014 1.268-6.158 3.833z"/>
-                            </svg>
+                        <a href="https://snapchat.com/t/jnB2CTpk" target="_blank" aria-label="Snapchat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFFC00"><path d="M5.829 4.533c-.6 1.344-.363 3.752-.267 5.436-.648.359-1.48-.271-1.951-.271-.49 0-1.075.322-1.167.802-.066.346.089.85 1.201 1.289.43.17 1.453.37 1.69.928.333.784-1.71 4.403-4.918 4.931-.251.041-.43.265-.416.519.056.975 2.242 1.357 3.211 1.507.099.134.179.7.306 1.131.057.193.204.424.582.424.493 0 1.312-.38 2.738-.144 1.398.233 2.712 2.215 5.235 2.215 2.345 0 3.744-1.991 5.09-2.215.779-.129 1.448-.088 2.196.058.515.101.977.157 1.124-.349.129-.437.208-.992.305-1.123.96-.149 3.156-.53 3.211-1.505.014-.254-.165-.477-.416-.519-3.154-.52-5.259-4.128-4.918-4.931.236-.557 1.252-.755 1.69-.928.814-.321 1.222-.716 1.213-1.173-.011-.585-.715-.934-1.233-.934-.527 0-1.284.624-1.897.286.096-1.698.332-4.095-.267-5.438-1.135-2.543-3.66-3.829-6.184-3.829-2.508 0-5.014 1.268-6.158 3.833z"/></svg>
+                        </a>
+                        <a href="https://youtube.com/@daelia-digital" target="_blank" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; WebPrime Sud 2026 - Tous droits réservés</p>
+                <p>&copy; WebPrime 2026 - Tous droits réservés</p>
             </div>
         </div>
     </footer>
@@ -716,6 +1087,40 @@
             });
         });
 
+        // Pre-fill from URL params (e.g. arrival from offer pages)
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var formule = params.get('formule');
+            if (formule) {
+                // Pre-check type_projet = Site internet
+                var siteRadio = document.querySelector('input[name="type_projet"][value="Site internet"]');
+                if (siteRadio) {
+                    siteRadio.checked = true;
+                    document.getElementById('cond-site').classList.add('visible');
+                }
+                // Pre-check the matching formule
+                var formuleRadio = document.querySelector('input[name="type_site"][value="' + formule.replace(/"/g, '\\"') + '"]');
+                if (formuleRadio) {
+                    formuleRadio.checked = true;
+                    if (formule === 'E-Commerce') {
+                        document.getElementById('cond-ecommerce').classList.add('visible');
+                        document.getElementById('cond-secteur').classList.remove('visible');
+                    }
+                }
+            }
+        })();
+
+        document.querySelectorAll('input[name="type_projet"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                var condSite = document.getElementById('cond-site');
+                if (this.value === 'Site internet') {
+                    condSite.classList.add('visible');
+                } else {
+                    condSite.classList.remove('visible');
+                }
+            });
+        });
+
         document.querySelectorAll('input[name="site_existant"]').forEach(function (radio) {
             radio.addEventListener('change', function () {
                 var condUrl = document.getElementById('cond-url');
@@ -730,8 +1135,48 @@
             });
         });
 
+        document.querySelectorAll('input[name="type_site"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                var condEcom = document.getElementById('cond-ecommerce');
+                var condSecteur = document.getElementById('cond-secteur');
+                if (this.value === 'E-Commerce') {
+                    condEcom.classList.add('visible');
+                    condSecteur.classList.remove('visible');
+                } else {
+                    condEcom.classList.remove('visible');
+                    condSecteur.classList.add('visible');
+                }
+            });
+        });
+
+        var sectorConditionals = {
+            'Restauration': 'cond-restauration',
+            'Beauté / Coiffure': 'cond-beaute-sante',
+            'Santé / Bien-être': 'cond-beaute-sante',
+            'Artisan / Bâtiment': 'cond-artisan',
+            'Auto / Garage': 'cond-auto',
+            'Immobilier / Agence': 'cond-immobilier',
+            'Cabinet / Agence': 'cond-cabinet',
+            'Coach / Formation': 'cond-coach',
+            'Avocat / Conseil': 'cond-avocat',
+            'Événementiel': 'cond-evenementiel'
+        };
+        var allSectorConds = ['cond-restauration', 'cond-beaute-sante', 'cond-artisan', 'cond-auto', 'cond-immobilier', 'cond-cabinet', 'cond-coach', 'cond-avocat', 'cond-evenementiel'];
+        var secteurSelect = document.getElementById('secteur');
+        if (secteurSelect) {
+            secteurSelect.addEventListener('change', function () {
+                allSectorConds.forEach(function (id) {
+                    document.getElementById(id).classList.remove('visible');
+                });
+                var target = sectorConditionals[this.value];
+                if (target) {
+                    document.getElementById(target).classList.add('visible');
+                }
+            });
+        }
+
         var currentPage = 1;
-        var totalPages = 3;
+        var totalPages = 2;
 
         function updateStepper() {
             document.querySelectorAll('.stepper-step').forEach(function (step) {
@@ -755,6 +1200,11 @@
             window.scrollTo({ top: 200, behavior: 'smooth' });
         }
 
+        function isHiddenConditional(el) {
+            var cond = el.closest('.conditional-field');
+            return cond && !cond.classList.contains('visible');
+        }
+
         function validatePage(page) {
             var pageEl = document.querySelector('.form-page[data-page="' + page + '"]');
             var valid = true;
@@ -763,6 +1213,7 @@
 
             pageEl.querySelectorAll('input[required], select[required], textarea[required]').forEach(function (input) {
                 if (input.type === 'radio' || input.type === 'checkbox') return;
+                if (isHiddenConditional(input)) return;
                 if (!input.value.trim() || !input.checkValidity()) {
                     input.closest('.form-group').classList.add('error');
                     valid = false;
@@ -770,8 +1221,9 @@
             });
 
             pageEl.querySelectorAll('.radio-group').forEach(function (group) {
-                var name = group.querySelector('input[type="radio"]').name;
                 var formGroup = group.closest('.form-group');
+                if (isHiddenConditional(formGroup)) return;
+                var name = group.querySelector('input[type="radio"]').name;
                 var isRequired = formGroup.querySelector('label .required');
                 if (isRequired && !document.querySelector('input[name="' + name + '"]:checked')) {
                     formGroup.classList.add('error');
@@ -781,6 +1233,7 @@
 
             pageEl.querySelectorAll('.checkbox-group').forEach(function (group) {
                 var formGroup = group.closest('.form-group');
+                if (isHiddenConditional(formGroup)) return;
                 var isRequired = formGroup.querySelector('label .required');
                 var checked = group.querySelectorAll('input[type="checkbox"]:checked');
                 if (isRequired && checked.length === 0) {
@@ -826,22 +1279,61 @@
                 payload.append('Entreprise', entreprise);
                 payload.append('Email', fd.get('email') || '');
                 payload.append('Téléphone', fd.get('telephone') || '');
-                payload.append('Site existant', fd.get('site_existant') || 'Non renseigné');
-                if (fd.get('url_site')) payload.append('URL du site', fd.get('url_site'));
-                if (fd.get('position_google')) payload.append('Position Google', fd.get('position_google'));
-                payload.append('Type de site', fd.get('type_site') || 'Non renseigné');
-                payload.append('Objectif', fd.getAll('objectif').join(', ') || 'Non renseigné');
+                payload.append('Type de projet', fd.get('type_projet') || 'Non renseigné');
                 payload.append('Secteur', fd.get('secteur') || 'Non renseigné');
                 payload.append('Métier', fd.get('metier') || 'Non renseigné');
-                payload.append('Ancienneté', fd.getAll('anciennete').join(', ') || 'Non renseigné');
-                payload.append('Source clients', fd.getAll('source_clients').join(', ') || 'Non renseigné');
-                payload.append('Clients par mois', fd.get('clients_mois') || 'Non renseigné');
-                payload.append('Situation', fd.getAll('situation').join(', ') || 'Non renseigné');
+                if (fd.get('site_existant')) payload.append('Site existant', fd.get('site_existant'));
+                if (fd.get('url_site')) payload.append('URL du site', fd.get('url_site'));
+                if (fd.get('position_google')) payload.append('Position Google', fd.get('position_google'));
+                if (fd.get('type_site')) payload.append('Formule', fd.get('type_site'));
+
+                // E-Commerce details
+                if (fd.get('ecom_nb_produits')) payload.append('E-Com — Nb produits', fd.get('ecom_nb_produits'));
+                if (fd.get('ecom_type_produits')) payload.append('E-Com — Type produits', fd.get('ecom_type_produits'));
+                if (fd.get('ecom_photos')) payload.append('E-Com — Photos prêtes', fd.get('ecom_photos'));
+                var ecomPaiements = fd.getAll('ecom_paiements').join(', ');
+                if (ecomPaiements) payload.append('E-Com — Moyens de paiement', ecomPaiements);
+                if (fd.get('ecom_zone_livraison')) payload.append('E-Com — Zone livraison', fd.get('ecom_zone_livraison'));
+                var ecomTransp = fd.getAll('ecom_transporteurs').join(', ');
+                if (ecomTransp) payload.append('E-Com — Transporteurs', ecomTransp);
+                if (fd.get('ecom_catalogue')) payload.append('E-Com — Catalogue existant', fd.get('ecom_catalogue'));
+
+                // Sector-specific
+                ['resto_reservations','resto_clickcollect','resto_livraison','resto_menu','resto_couverts','resto_multi',
+                 'bs_rdv','bs_vente_produits','bs_galerie','bs_praticiens',
+                 'artisan_departement','artisan_villes','artisan_devis','artisan_galerie','artisan_prestations','artisan_cible',
+                 'auto_rdv','auto_devis','auto_pieces','auto_type',
+                 'immo_catalogue','immo_filtres','immo_estimation','immo_backoffice','immo_activite',
+                 'cab_rdv','cab_collaborateurs','cab_portfolio','cab_devis',
+                 'coach_formations','coach_calendrier','coach_espace_membre','coach_paiement',
+                 'avocat_rdv','avocat_espace_client','avocat_specialites','avocat_prequalif',
+                 'event_billetterie','event_type','event_agenda','event_galerie'
+                ].forEach(function (k) {
+                    var v = fd.get(k);
+                    if (v) payload.append(k, v);
+                });
+
                 if (fd.get('commentaires')) payload.append('Commentaires', fd.get('commentaires'));
 
-                payload.append('_subject', 'Nouvelle demande WebPrime Sud - ' + (entreprise || prenom));
+                payload.append('_subject', 'Nouvelle demande WebPrime - ' + (entreprise || prenom));
                 payload.append('_template', 'table');
                 payload.append('_captcha', 'false');
+
+                // Save key answers to localStorage for the merci.html quote display
+                try {
+                    var quoteData = {
+                        prenom: prenom,
+                        entreprise: entreprise,
+                        type_projet: fd.get('type_projet') || '',
+                        type_site: fd.get('type_site') || '',
+                        secteur: fd.get('secteur') || '',
+                        metier: fd.get('metier') || '',
+                        email: fd.get('email') || '',
+                        telephone: fd.get('telephone') || '',
+                        ts: Date.now()
+                    };
+                    localStorage.setItem('webprimeQuote', JSON.stringify(quoteData));
+                } catch (e) { /* localStorage might be blocked */ }
 
                 var response = await fetch('https://formsubmit.co/ajax/contact@webprime.fr', {
                     method: 'POST',

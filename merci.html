@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merci - WebPrime Sud</title>
+    <title>Merci - WebPrime</title>
     <meta name="description" content="Vos informations ont bien été reçues. L'équipe WebPrime revient vers vous rapidement.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -23,11 +23,81 @@
             background: #111;
             border: 1px solid #2a2a2a;
             border-radius: 24px;
-            padding: 60px 40px;
-            max-width: 550px;
+            padding: 50px 40px;
+            max-width: 680px;
             margin: 0 auto;
             text-align: center;
         }
+        .quote-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(249, 115, 22, 0.06));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0 28px;
+            text-align: left;
+        }
+        .quote-label {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffb156;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .quote-title {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .quote-meta { color: #9ca3af; font-size: 14px; margin-bottom: 16px; }
+        .quote-price {
+            color: #ffb156;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .quote-price small { font-size: 14px; font-weight: 400; color: #9ca3af; }
+        .quote-features { list-style: none; padding: 0; margin: 0 0 8px; }
+        .quote-features li {
+            color: #d1d5db; font-size: 14px;
+            padding: 5px 0 5px 22px;
+            position: relative;
+        }
+        .quote-features li::before {
+            content: '✓'; color: #22c55e;
+            position: absolute; left: 0; font-weight: 700;
+        }
+        .btn-pay {
+            display: inline-block;
+            padding: 14px 36px;
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: #fff;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 4px 6px;
+        }
+        .btn-pay:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35); }
+        .btn-secondary {
+            display: inline-block;
+            padding: 13px 28px;
+            background: transparent;
+            color: #d1d5db;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 4px 6px;
+        }
+        .btn-secondary:hover { background: #1a1a1a; border-color: #444; }
+        .quote-note { color: #6b7280; font-size: 13px; margin-top: 18px; line-height: 1.6; }
         .merci-icon {
             width: 80px;
             height: 80px;
@@ -94,22 +164,38 @@
             <nav class="nav" id="nav">
                 <ul>
                     <li><a href="https://webprime-sud.fr/creation-site-internet.html">Sites Web</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#">Templates</a>
+                        <ul class="dropdown-menu">
+                            <li class="has-submenu"><a href="#">Automobile</a><ul class="dropdown-submenu"><li><a href="https://aqua-monkey-704831.hostingersite.com/" target="_blank">Garage</a></li><li><a href="http://mypark-orly.fr/" target="_blank">MyPark Orly</a></li></ul></li>
+                            <li class="has-submenu"><a href="#">E-commerce</a><ul class="dropdown-submenu"><li><a href="https://flt-jjb.com/" target="_blank">FLT JJB</a></li><li><a href="http://hype-store-paris.fr/" target="_blank">Hype Store Paris</a></li><li><a href="https://kazeko-fight.com/" target="_blank">Kazeko Fight</a></li><li><a href="https://slategrey-reindeer-208796.hostingersite.com/" target="_blank">Multimédia</a></li><li><a href="https://samba-sima.com/" target="_blank">Samba Sima</a></li><li><a href="https://orangered-jay-633222.hostingersite.com/" target="_blank">Senzufit</a></li><li><a href="http://sogroomi.fr/" target="_blank">Sogroomi</a></li><li><a href="https://yakare-cosmetics.com/" target="_blank">Yakaré Cosmetics</a></li></ul></li>
+                            <li class="has-submenu"><a href="#">Formation</a><ul class="dropdown-submenu"><li><a href="https://flt-house.com/" target="_blank">FLT House</a></li><li><a href="https://formation-btp-59.fr/" target="_blank">Formation BTP 59</a></li></ul></li>
+                            <li class="has-submenu"><a href="#">Restauration Rapide</a><ul class="dropdown-submenu"><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/coffee-bar/" target="_blank">Coffee Bar</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/thai-food/" target="_blank">Cuisine Thaï</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/food-truck/" target="_blank">Food Truck</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/pizzeria/" target="_blank">Pizzeria</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/indian-restaurant/" target="_blank">Restaurant Indien</a></li><li><a href="https://forestgreen-tarsier-649694.hostingersite.com/steakhouse-grill/" target="_blank">Steakhouse & Grill</a></li></ul></li>
+                            <li class="has-submenu"><a href="#">Restaurant & Bar</a><ul class="dropdown-submenu"><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/cafe-home/" target="_blank">Café</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/mediterranean-cafe/" target="_blank">Café Méditerranéen</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/cocktail-bar/" target="_blank">Cocktail Bar</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/seafood-restaurant/" target="_blank">Fruits de Mer</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/fine-dining-home/" target="_blank">Gastronomique</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/patisserie-home/" target="_blank">Pâtisserie</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/pizzeria-home/" target="_blank">Pizzeria</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/steak-house/" target="_blank">Steak House</a></li><li><a href="https://mediumseagreen-hare-429974.hostingersite.com/sushi-restaurant/" target="_blank">Sushi</a></li></ul></li>
+                            <li><a href="https://yellow-gorilla-456049.hostingersite.com/" target="_blank">Auto-école</a></li>
+                            <li><a href="https://paleturquoise-partridge-371738.hostingersite.com/" target="_blank">Fitness & Sport</a></li>
+                            <li><a href="https://rosybrown-cormorant-956760.hostingersite.com/" target="_blank">Photographie</a></li>
+                            <li><a href="https://midnightblue-viper-637319.hostingersite.com/" target="_blank">Transport VTC</a></li>
+                        </ul>
+                    </li>
                     <li><a href="https://webprime-sud.fr/creation-application-mobile.html">Applications Mobiles</a></li>
                     <li><a href="https://daelia-digital.fr/premiere-page-google/" target="_blank">1ère Page Google</a></li>
+                    <li><a href="https://webprime-sud.fr/contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section class="merci-page">
-        <div class="merci-card">
+        <div class="merci-card" id="merciCard">
             <div class="merci-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                 </svg>
             </div>
-            <h1>Merci <span>!</span></h1>
-            <p>Nous avons bien reçu vos informations.<br>Notre équipe revient vers vous <strong style="color:#fff;">rapidement</strong>.</p>
+            <h1 id="merciTitle">Merci <span>!</span></h1>
+            <p id="merciIntro">Nous avons bien reçu vos informations.<br>Notre équipe revient vers vous <strong style="color:#fff;">dans l'heure</strong>.</p>
+            <div id="quoteContainer"></div>
             <a href="https://webprime-sud.fr" class="btn-home">Retour à l'accueil</a>
         </div>
     </section>
@@ -119,9 +205,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>WebPrime</h4>
-                    <p>Création de sites internet et applications mobiles haut de gamme dans l'Alpes-Maritimes (06)</p>
+                    <p>Création de sites internet et applications mobiles haut de gamme partout en France</p>
                 </div>
-
                 <div class="footer-col">
                     <h4>Nos Services</h4>
                     <ul>
@@ -132,7 +217,6 @@
                         <li><a href="creation-application-mobile.html">Application Mobile</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
@@ -140,31 +224,26 @@
                         <li><a href="https://webprime-sud.fr">webprime-sud.fr</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h4>Suivez-nous</h4>
                     <div class="social-links">
                         <a href="https://www.instagram.com/webprime.es" target="_blank" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E4405F">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
                         <a href="https://www.tiktok.com/@kazeko_fight" target="_blank" aria-label="TikTok">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
-                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
                         </a>
-                        <a href="https://snapchat.com/t/qEbNohNU" target="_blank" aria-label="Snapchat">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFFC00">
-                                <path d="M5.829 4.533c-.6 1.344-.363 3.752-.267 5.436-.648.359-1.48-.271-1.951-.271-.49 0-1.075.322-1.167.802-.066.346.089.85 1.201 1.289.43.17 1.453.37 1.69.928.333.784-1.71 4.403-4.918 4.931-.251.041-.43.265-.416.519.056.975 2.242 1.357 3.211 1.507.099.134.179.7.306 1.131.057.193.204.424.582.424.493 0 1.312-.38 2.738-.144 1.398.233 2.712 2.215 5.235 2.215 2.345 0 3.744-1.991 5.09-2.215.779-.129 1.448-.088 2.196.058.515.101.977.157 1.124-.349.129-.437.208-.992.305-1.123.96-.149 3.156-.53 3.211-1.505.014-.254-.165-.477-.416-.519-3.154-.52-5.259-4.128-4.918-4.931.236-.557 1.252-.755 1.69-.928.814-.321 1.222-.716 1.213-1.173-.011-.585-.715-.934-1.233-.934-.527 0-1.284.624-1.897.286.096-1.698.332-4.095-.267-5.438-1.135-2.543-3.66-3.829-6.184-3.829-2.508 0-5.014 1.268-6.158 3.833z"/>
-                            </svg>
+                        <a href="https://snapchat.com/t/jnB2CTpk" target="_blank" aria-label="Snapchat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFFC00"><path d="M5.829 4.533c-.6 1.344-.363 3.752-.267 5.436-.648.359-1.48-.271-1.951-.271-.49 0-1.075.322-1.167.802-.066.346.089.85 1.201 1.289.43.17 1.453.37 1.69.928.333.784-1.71 4.403-4.918 4.931-.251.041-.43.265-.416.519.056.975 2.242 1.357 3.211 1.507.099.134.179.7.306 1.131.057.193.204.424.582.424.493 0 1.312-.38 2.738-.144 1.398.233 2.712 2.215 5.235 2.215 2.345 0 3.744-1.991 5.09-2.215.779-.129 1.448-.088 2.196.058.515.101.977.157 1.124-.349.129-.437.208-.992.305-1.123.96-.149 3.156-.53 3.211-1.505.014-.254-.165-.477-.416-.519-3.154-.52-5.259-4.128-4.918-4.931.236-.557 1.252-.755 1.69-.928.814-.321 1.222-.716 1.213-1.173-.011-.585-.715-.934-1.233-.934-.527 0-1.284.624-1.897.286.096-1.698.332-4.095-.267-5.438-1.135-2.543-3.66-3.829-6.184-3.829-2.508 0-5.014 1.268-6.158 3.833z"/></svg>
+                        </a>
+                        <a href="https://youtube.com/@daelia-digital" target="_blank" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; WebPrime Sud 2026 - Tous droits réservés</p>
+                <p>&copy; WebPrime 2026 - Tous droits réservés</p>
             </div>
         </div>
     </footer>
@@ -182,6 +261,135 @@
                 nav.classList.remove('active');
             }
         });
+
+        // ── Dynamic personalised quote from localStorage ──
+        var FORMULES = {
+            'Pack 1ère page Google': {
+                titre: 'Pack 1ère page Google',
+                meta: '100% codé · Vitrine + référencement SEO inclus',
+                prix: '159€<small> / mois</small>',
+                features: [
+                    'Site vitrine codé sur mesure',
+                    'Pages illimitées + responsive',
+                    'Référencement 1ère page Google garanti',
+                    'Modifications illimitées',
+                    'Sans engagement — résiliable à tout moment'
+                ],
+                stripe: 'https://buy.stripe.com/bJecN51HAciEfHBgPy14400',
+                detail: 'pack-google.html'
+            },
+            'Vitrine': {
+                titre: 'Site Vitrine',
+                meta: 'WordPress + PHP + JS · Paiement unique',
+                prix: '290€',
+                features: [
+                    '1 à 7 pages personnalisées',
+                    'Design moderne et responsive',
+                    'Formulaire de contact intégré',
+                    'Référencement SEO de base',
+                    'Hébergement 1ère année offert'
+                ],
+                stripe: 'https://buy.stripe.com/4gMbJ1cmebeA2UPeHq14404',
+                detail: 'site-vitrine.html'
+            },
+            'Réservation (sans paiement)': {
+                titre: 'Site Booking (sans paiement)',
+                meta: 'Système de réservation intégré · sans Stripe',
+                prix: '490€',
+                features: [
+                    'Module de réservation intégré',
+                    'Calendrier de disponibilités',
+                    'Gestion des créneaux horaires',
+                    'Notifications email automatiques',
+                    'Design responsive + SEO + hébergement offert'
+                ],
+                stripe: 'https://buy.stripe.com/6oU00jgCuaaw67156Q14403',
+                detail: 'site-booking.html'
+            },
+            'Réservation (avec paiement)': {
+                titre: 'Site Booking (avec paiement intégré)',
+                meta: 'Système de réservation + paiement en ligne (Stripe)',
+                prix: '590€',
+                features: [
+                    'Module de réservation intégré',
+                    'Paiement en ligne (Stripe) à la résa ou acompte',
+                    'Calendrier + gestion des créneaux',
+                    'Notifications email automatiques',
+                    'Design responsive + SEO + hébergement offert'
+                ],
+                stripe: null,
+                detail: 'site-booking.html'
+            },
+            'E-Commerce': {
+                titre: 'Site E-Commerce',
+                meta: 'WordPress + PHP + JS · Boutique en ligne complète',
+                prix: '390€',
+                features: [
+                    'Boutique en ligne complète',
+                    'Catalogue produits illimité',
+                    'Panier + checkout sécurisé',
+                    'Multi-moyens de paiement',
+                    'Gestion stocks + commandes + emails de confirmation'
+                ],
+                stripe: 'https://buy.stripe.com/cNi9ATcmefuQ1QL6aU14402',
+                detail: 'site-ecommerce.html'
+            }
+        };
+
+        try {
+            var raw = localStorage.getItem('webprimeQuote');
+            if (raw) {
+                var q = JSON.parse(raw);
+                if (q && q.ts && (Date.now() - q.ts) < 60 * 60 * 1000) {
+                    var prenom = (q.prenom || '').trim();
+                    var formule = FORMULES[q.type_site];
+                    var titleEl = document.getElementById('merciTitle');
+                    var introEl = document.getElementById('merciIntro');
+                    var container = document.getElementById('quoteContainer');
+
+                    if (prenom) {
+                        titleEl.innerHTML = 'Merci ' + escapeHtml(prenom) + ' <span>!</span>';
+                    }
+
+                    if (q.type_projet === 'Application mobile') {
+                        introEl.innerHTML = 'Votre projet d\'application mobile a bien été reçu.<br>Les apps étant <strong style="color:#fff;">sur devis</strong>, notre équipe revient vers vous <strong style="color:#fff;">dans l\'heure</strong> avec une proposition adaptée.';
+                    } else if (formule) {
+                        var metaLine = [q.secteur, q.metier].filter(Boolean).join(' · ');
+                        introEl.innerHTML = 'Voici votre <strong style="color:#fff;">devis personnalisé</strong>' + (metaLine ? ' pour <strong style="color:#fff;">' + escapeHtml(metaLine) + '</strong>' : '') + '.';
+
+                        var html = '<div class="quote-box">' +
+                            '<div class="quote-label">Formule recommandée</div>' +
+                            '<div class="quote-title">' + escapeHtml(formule.titre) + '</div>' +
+                            '<div class="quote-meta">' + escapeHtml(formule.meta) + '</div>' +
+                            '<div class="quote-price">' + formule.prix + '</div>' +
+                            '<ul class="quote-features">' +
+                                formule.features.map(function (f) { return '<li>' + escapeHtml(f) + '</li>'; }).join('') +
+                            '</ul>' +
+                            '</div>';
+
+                        if (formule.stripe) {
+                            html += '<a href="' + formule.stripe + '" target="_blank" class="btn-pay">Procéder au paiement →</a>';
+                        } else {
+                            html += '<div class="quote-note" style="color:#fbbf24; background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.25); border-radius:12px; padding:14px;">Cette formule nécessite la configuration du paiement en ligne. <strong>Notre équipe vous contactera dans l\'heure</strong> avec le lien de paiement personnalisé.</div>';
+                        }
+                        html += '<a href="' + formule.detail + '" class="btn-secondary">Voir le détail du pack</a>';
+                        html += '<p class="quote-note">📞 Nous vous appelons dans l\'heure pour confirmer votre projet et démarrer la création.</p>';
+
+                        container.innerHTML = html;
+                    }
+
+                    localStorage.removeItem('webprimeQuote');
+                } else {
+                    localStorage.removeItem('webprimeQuote');
+                }
+            }
+        } catch (e) { /* localStorage blocked or JSON corrupted — show default merci */ }
+
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
     </script>
 </body>
 </html>
