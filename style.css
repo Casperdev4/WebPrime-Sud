@@ -1737,3 +1737,61 @@ a:hover {
         height: 250px;
     }
 }
+
+/* =========================================================
+   Site formulaires : footer en theme terminal (portail)
+   ========================================================= */
+.footer {
+    background: #0b0b0d;
+    border-top: 1px solid #2a2a2e;
+    padding: 40px 0 26px;
+    font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Consolas', ui-monospace, monospace;
+}
+.footer .container::before {
+    content: "webprime@portal:~$ cat infos.txt";
+    display: block;
+    color: #22c55e;
+    font-size: 13px;
+    margin-bottom: 28px;
+    opacity: 0.85;
+}
+.footer-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 28px;
+    margin-bottom: 28px;
+}
+.footer-col h4 {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: lowercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+}
+.footer-col h4::before { content: "# "; color: #f97316; }
+.footer-col p { font-size: 12.5px; color: #6b7280; line-height: 1.7; }
+.footer-col ul a,
+.footer-col ul a:visited {
+    color: #ffb156;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+}
+.footer-col ul a::before { content: "\2192"; color: #6b7280; margin-right: 6px; }
+.footer-col ul a:hover { color: #f97316; }
+.social-links { gap: 10px; }
+.social-links a {
+    width: 34px; height: 34px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid #2a2a2e;
+    border-radius: 7px;
+}
+.social-links a:hover {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: #f97316;
+    transform: translateY(-2px);
+}
+.social-links a svg { width: 18px; height: 18px; }
+.footer-bottom { border-top: 1px solid #2a2a2e; padding-top: 22px; }
+.footer-bottom p { color: #4b5563; font-size: 12px; }
+.footer-bottom p::before { content: "// "; color: #2a2a2e; }
