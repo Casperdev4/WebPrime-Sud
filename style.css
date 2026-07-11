@@ -2416,3 +2416,13 @@ a:hover {
             .merci-card h1 { font-size: 24px; }
             .header-simple .logo img { height: 40px; }
         }
+
+
+/* Mentions légales */
+.legal { max-width: 820px; margin: 0 auto; }
+.legal h1 { color: #fff; font-size: 34px; margin-bottom: 8px; }
+.legal .legal-sub { color: var(--text-gray); font-size: 15px; margin-bottom: 36px; }
+.legal h2 { color: var(--primary-orange); font-size: 18px; margin: 30px 0 10px; }
+.legal p { color: var(--text-light); font-size: 15px; line-height: 1.75; margin-bottom: 6px; }
+.legal a { color: var(--primary-orange); }
+.legal strong { color: #fff; }
