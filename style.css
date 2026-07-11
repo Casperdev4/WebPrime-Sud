@@ -2208,6 +2208,12 @@ a:hover {
                 padding: 8px 6px; z-index: 1000; box-shadow: 0 -6px 24px rgba(0,0,0,0.5);
             }
             body { padding-bottom: 84px; }
+            .ent-section { padding: 44px 0; }
+            .ent-hero { padding: 104px 0 52px; }
+            .ent-hero h1 { font-size: 33px; }
+            .ent-cta { padding: 56px 0; }
+            .ent-grid { margin-top: 30px; }
+            .ent-section h2 { font-size: 27px; }
         }
 
 
